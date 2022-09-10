@@ -1,0 +1,21 @@
+<card>
+  <form class="form-container tw-w-2/4 tw-mx-auto" [formGroup]="form" card-wrapper (submit)="editHub(form)">
+    <h1 class="form-title">Edit Hub</h1>
+    <input type="text" placeholder="Hub Name" class="form-control" formControlName="name" />
+    <ng-container *ngIf="nameInvalid">
+      <app-validation-message validator="required" *ngIf="name?.errors?.['required']"></app-validation-message>
+    </ng-container>
+    <input type="text" placeholder="Latitude" class="form-control" formControlName="latitude" />
+    <ng-container *ngIf="latitudeInvalid">
+      <app-validation-message validator="required" *ngIf="latitude?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="integer" *ngIf="latitude?.errors?.['integer']"></app-validation-message>
+    </ng-container>
+    <input type="text" placeholder="Longitude" class="form-control" formControlName="longitude" />
+    <ng-container *ngIf="longitudeInvalid">
+      <app-validation-message validator="required" *ngIf="longitude?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="integer" *ngIf="longitude?.errors?.['integer']"></app-validation-message>
+    </ng-container>
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Edit Hub</button>
+  </form>
+</card>

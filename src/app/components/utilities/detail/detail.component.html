@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h1 class="tw-font-bold">{{ title }}</h1>
+  <ul>
+    <ng-container *ngFor="let field of fields">
+      <li *ngIf="field.type === 'text'">
+        <strong>{{ field.text }}:</strong> {{ data[field.dataField] }}
+      </li>
+      <li *ngIf="field.type === 'name'">
+        <strong>{{ field.text }}:</strong> {{ data["title"] ?? "" }} {{ data["firstName"] }} {{ data["lastName"] ?? data["surname"] }}
+      </li>
+      <li *ngIf="field.type === 'image'">
+        <img [class]="field.image?.alt" [src]="data[field.dataField]" [alt]="field.image?.alt" />
+      </li>
+      <li *ngIf="field.type === 'address'">
+        <strong>{{ field.text }}:</strong> {{ data["home"] ?? "" }} {{ data["building"] ?? "" }} {{ data["street"] }} <br />
+        {{ data["barangay"] }}, {{ data["city"] }}, {{ data["province"] }} {{ data["postalCode"] }}
+      </li>
+    </ng-container>
+  </ul>
+</div>

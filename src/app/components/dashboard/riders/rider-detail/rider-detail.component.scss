@@ -1,0 +1,393 @@
+.rider-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  min-height: 100%;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+
+  @screen xl {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rider-card {
+    background-color: rgba(255, 255, 255);
+    padding: 1rem 0.5rem 1.5rem 0.5rem;
+    border: none;
+    box-shadow: 0 2px 18px 1px rgb(49 53 72 / 10%);
+    border-radius: 0.45rem;
+    min-height: 100%;
+
+    .btn-container {
+      @apply tw-grid tw-grid-flow-col;
+
+      .btn-edit {
+        @apply tw-grid tw-justify-end tw-pt-3 tw-pr-6;
+        color: #2d5affa9;
+        font-weight: 500;
+      }
+    }
+
+    .rider-wrapper {
+      @apply tw-grid;
+      grid-template-rows: 12.5rem 3.5rem 3rem;
+      justify-content: stretch;
+      justify-items: center;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+
+      .image-container {
+        @apply tw-grid;
+        grid-template-rows: 11.5rem 1fr;
+
+        .image-wrapper {
+          display: grid;
+          place-content: center;
+
+          img {
+            height: 9.5rem;
+            border-radius: 50%;
+            position: relative;
+          }
+        }
+
+        .rider-status {
+          background-color: #00ca72;
+          color: white;
+          padding: 0.5rem 1rem;
+          margin: 0 1.75rem;
+          border-radius: 0.5rem;
+          font-size: 1rem;
+          z-index: 1;
+          text-align: center;
+          position: relative;
+          bottom: 2rem;
+        }
+      }
+
+      .rider-title {
+        display: grid;
+        grid-template-rows: 1.8rem 1.75rem;
+        align-items: center;
+
+        .rider-name {
+          color: #212b36;
+          font-weight: 500;
+          font-size: 1.8rem;
+          text-align: center;
+          padding-bottom: 0.25rem;
+        }
+
+        .rider-motor {
+          font-size: 1.2rem;
+          font-family: "Roboto";
+          letter-spacing: 0.1rem;
+          color: #5e7379;
+        }
+      }
+
+      .rider-body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        gap: 1.3rem;
+
+        .detail-container {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          gap: 1rem;
+
+          .detail {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            border-radius: 0.5rem;
+            background: #eef0f4;
+            padding: 0.5rem 0.9rem;
+            box-shadow: 0px 4px 10px 0px #0374e626;
+
+            .detail-title {
+              color: #212b36;
+              font-size: 1rem;
+              font-weight: 500;
+            }
+
+            .detail-body {
+              display: flex;
+              justify-content: start;
+              padding-left: 1.25rem;
+
+              .detail-date {
+                color: #5e7379;
+                font-size: 1rem;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .horizontal-line {
+    width: 70%;
+    height: 0.15rem;
+    background-color: #666;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .sub-detail {
+    display: grid;
+    min-height: 100%;
+    width: 100%;
+    align-items: center;
+    gap: 1.5rem;
+    @apply tw-grid-flow-row-dense;
+
+    .license-card {
+      background-color: rgba(255, 255, 255);
+      padding: 1rem 0.5rem;
+      box-shadow: 0 2px 18px 1px rgb(49 53 72 / 10%);
+      border-radius: 0.45rem;
+      min-height: 100%;
+
+      .license {
+        padding: 1rem;
+
+        .license-detail {
+          @apply tw-grid tw-grid-flow-col;
+
+          .license-title {
+            color: #ff8e01;
+            font-size: 1.5rem;
+            font-weight: 500;
+          }
+
+          .license-btn {
+            @apply tw-grid tw-justify-end tw-pt-2;
+            color: #2d5affa9;
+            font-weight: 500;
+          }
+        }
+
+        .license-container {
+          @apply tw-grid;
+          grid-template-columns: 23rem 1fr;
+          gap: 1rem;
+
+          .license-detail {
+            background: #eef0f4;
+            box-shadow: 0px 4px 10px 0px #0374e626;
+            width: 100%;
+            text-align: start;
+            padding: 0.5rem 1rem;
+            max-height: 100%;
+            margin-top: 1.75rem;
+            display: block;
+
+            .title-number {
+              font-weight: 500;
+              font-size: 1rem;
+              color: #212b36;
+            }
+
+            .license-number {
+              font-weight: 400;
+              font-size: 1rem;
+              color: #516579cc;
+              padding-left: 1.25rem;
+            }
+          }
+
+          .license-image {
+            width: 100%;
+
+            .front-license-image {
+              font-weight: 500;
+              font-size: 1rem;
+              color: #212b36;
+              text-align: start;
+              padding-bottom: 0.25rem;
+            }
+
+            .license-upload {
+              background-color: #9197b32b;
+              background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23ADB9C6FF' stroke-width='4' stroke-dasharray='6%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+              padding: 1.5rem 1rem;
+              max-height: 80%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              border-radius: 1rem;
+
+              .upload-title {
+                text-align: center;
+                color: #2d5bff;
+                font-weight: 300;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+
+        .date-container {
+          @apply tw-grid;
+          grid-template-columns: 11rem 11rem 1fr;
+          padding-top: 1rem;
+          gap: 1rem;
+
+          .date-detail {
+            background: #eef0f4;
+            box-shadow: 0px 4px 10px 0px #0374e626;
+            width: 100%;
+            text-align: start;
+            padding: 0.5rem 1rem;
+            max-height: 100%;
+            margin-top: 1.75rem;
+
+            .date-title {
+              font-weight: 500;
+              font-size: 1rem;
+              color: #212b36;
+            }
+
+            .issued-date {
+              font-weight: 400;
+              font-size: 1rem;
+              color: #516579cc;
+              padding-left: 1.25rem;
+            }
+          }
+
+          .date-image {
+            width: 100%;
+
+            .image-title {
+              font-weight: 500;
+              font-size: 1rem;
+              color: #212b36;
+              text-align: start;
+              padding-bottom: 0.25rem;
+            }
+
+            .date-upload {
+              background-color: #9197b32b;
+              background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23ADB9C6FF' stroke-width='4' stroke-dasharray='6%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+              padding: 1.5rem 1rem;
+              max-height: 80%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              border-radius: 1rem;
+
+              .upload-title {
+                text-align: center;
+                color: #2d5bff;
+                font-weight: 300;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .orcr-card {
+      background-color: rgba(255, 255, 255);
+      padding: 1rem 0.5rem;
+      border: none;
+      box-shadow: 0 2px 18px 1px rgb(49 53 72 / 10%);
+      border-radius: 0.45rem;
+      min-height: 100%;
+
+      .orcr {
+        padding: 1.5rem 1rem;
+
+        .edit-container {
+          @apply tw-grid tw-grid-flow-col;
+
+          .orcr-title {
+            color: #ff8e01;
+            font-size: 1.5rem;
+            font-weight: 500;
+          }
+
+          .orcr-edit {
+            @apply tw-grid tw-justify-end tw-pt-3;
+            color: #2d5affa9;
+            font-weight: 500;
+          }
+        }
+
+        .orcr-container {
+          @apply tw-grid;
+          grid-template-columns: 11rem 11rem 1fr;
+          gap: 1rem;
+
+          .orcr-detail {
+            background: #eef0f4;
+            box-shadow: 0px 4px 10px 0px #0374e626;
+            width: 100%;
+            text-align: start;
+            padding: 0.5rem 1rem;
+            max-height: 100%;
+            margin-top: 1.75rem;
+
+            .orcr-title-number {
+              font-weight: 500;
+              font-size: 1rem;
+              color: #212b36;
+            }
+
+            .orcr-number {
+              font-weight: 400;
+              font-size: 1rem;
+              color: #516579cc;
+              padding-left: 1.25rem;
+            }
+
+            .orcr-date {
+              @apply tw-pt-1;
+              color: #516579cc;
+              padding-left: 0.35rem;
+            }
+          }
+
+          .orcr-image {
+            width: 100%;
+
+            .orcr-title-image {
+              font-weight: 500;
+              font-size: 1rem;
+              color: #212b36;
+              text-align: start;
+              padding-bottom: 0.25rem;
+            }
+
+            .orcr-upload {
+              background-color: #9197b32b;
+              background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='17' ry='17' stroke='%23ADB9C6FF' stroke-width='4' stroke-dasharray='6%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+              padding: 1.5rem 1rem;
+              max-height: 100%;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              border-radius: 1rem;
+
+              .orcr-title-upload {
+                text-align: center;
+                color: #2d5bff;
+                font-weight: 300;
+                font-size: 0.9rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

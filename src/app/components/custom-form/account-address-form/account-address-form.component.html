@@ -1,0 +1,24 @@
+<div class="form-container" [formGroup]="form">
+  <div class="form-group-col">
+    <input type="text" class="form-control" formControlName="house" placeholder="House Number. Leave blank if N/A" />
+    <input type="text" class="form-control" formControlName="building" placeholder="Building Number. Leave blank if N/A" />
+    <input type="text" class="form-control" formControlName="number" placeholder="Number" />
+  </div>
+  <input type="text" class="form-control" formControlName="street" placeholder="Street Name" />
+  <div class="form-group-col">
+    <input type="text" class="form-control" formControlName="barangay" placeholder="Barangay" />
+    <input type="text" class="form-control" formControlName="municipality" placeholder="Municipality" />
+  </div>
+  <div class="form-group-col">
+    <input type="text" class="form-control" formControlName="city" placeholder="City" />
+    <input type="text" class="form-control" formControlName="province" placeholder="Province" />
+    <input type="text" class="form-control" formControlName="postalCode" placeholder="Postal Code" />
+    <ng-container *ngIf="fieldInvalid('postalCode')">
+      <app-validation-message *ngIf="field('postalCode')?.errors?.['required']"></app-validation-message>
+      <app-validation-message
+        validator="zip"
+        *ngIf="field('postalCode').errors?.['min'] || field('postalCode').errors?.['max']"
+      ></app-validation-message>
+    </ng-container>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap");
+
+.container {
+  padding: 1rem 1rem 3rem 1rem;
+  height: 100%;
+
+  .history {
+    padding: 0 2rem;
+
+    .head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      margin: 2rem 0;
+
+      h1 {
+        @apply tw-font-semibold;
+        font-size: 2.4rem;
+      }
+
+      .filter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 0.7rem;
+
+        .status {
+          color: #8d9dae;
+          font-family: "Poppins";
+          border: 1px solid #dedede;
+          text-align: center;
+          outline: none;
+          cursor: pointer;
+        }
+
+        .date {
+          border: 1px solid #dedede;
+        }
+
+        .pagination {
+          display: flex;
+          justify-content: space-between;
+
+          .number {
+            color: #343a40;
+          }
+
+          .select {
+            color: #fff;
+            background-color: #ff7733;
+            padding: 0 0.5rem;
+          }
+
+          .arrow {
+            color: #343a40;
+            background-color: #dfdfdf;
+            padding: 0 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

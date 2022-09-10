@@ -1,0 +1,13 @@
+<div class="dashboard">
+  <div class="navbar">
+    <navbar [logo]="logo" [projectName]="projectName"></navbar>
+  </div>
+  <div class="body">
+    <div class="sidebar">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="router">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

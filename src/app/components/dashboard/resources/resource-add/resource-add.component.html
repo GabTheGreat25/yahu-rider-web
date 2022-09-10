@@ -1,0 +1,24 @@
+<section class="resource-card">
+  <form class="resource-container" [formGroup]="form" card-wrapper>
+    <h1 class="resource-title">Add Resource</h1>
+    <p class="resource-sub-title">Please Input The Required Information</p>
+
+    <h1 class="control-title">Name</h1>
+    <validated-input [control]="name" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="resource-control" formControlName="name" placeholder="Name" (blur)="removeMessage()" />
+    </validated-input>
+
+    <h1 class="control-title">Path</h1>
+    <validated-input [control]="path" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="resource-control" formControlName="path" placeholder="Path" (blur)="removeMessage()" />
+    </validated-input>
+
+    <h1 class="control-title">Method</h1>
+    <select class="resource-control" formControlName="method">
+      <option [value]="method" *ngFor="let method of methods" selected>{{ method }}</option>
+    </select>
+
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit tw-mt-6" (click)="onSubmit()">Add Resource</button>
+  </form>
+</section>

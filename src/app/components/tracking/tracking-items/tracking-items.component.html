@@ -1,0 +1,18 @@
+<card class="tw-h-full">
+  <card-wrapper card-wrapper>
+    <tracking-header
+      [timelines]="timelines"
+      [trackingNumber]="trackingNumber"
+      [fullName]="fullName"
+      [status]="status"
+      [fullAddress]="fullAddress"
+      [origin]="origin"
+    ></tracking-header>
+
+    <tracking-body [qrCode]="qrCode" [timelines]="timelines"></tracking-body>
+
+    <div class="btn-container">
+      <button class="btn-outline" (click)="goBack()">Back</button>
+    </div>
+  </card-wrapper>
+</card>

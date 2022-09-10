@@ -1,0 +1,15 @@
+<floating-popup [show]="show">
+  <div class="info" [formGroup]="form">
+    <h1 class="title">{{ title }}</h1>
+    <p>Name*</p>
+    <input type="text" formControlName="name" />
+    <p>Mobile Number*</p>
+    <input type="text" formControlName="number" (keypress)="numberOnly($event)" />
+    <p>Block/Floor/Room*</p>
+    <input type="text" formControlName="description" />
+    <div class="btn-container">
+      <button class="btn-outline" (click)="onCancel()">Cancel</button>
+      <button class="btn" (click)="onSubmit()" [disabled]="form.invalid">Save</button>
+    </div>
+  </div>
+</floating-popup>

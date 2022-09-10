@@ -1,0 +1,428 @@
+<card>
+  <form class="form-container tw-w-2/4 tw-mx-auto" card-wrapper [formGroup]="form" (submit)="addBilling(form)">
+    <h1 class="form-title">Add Billings</h1>
+
+    <input type="date" class="form-control" formControlName="date" />
+    <ng-container *ngIf="dateInvalid">
+      <app-validation-message validator="required" *ngIf="date?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Account Number" class="form-control" formControlName="shipperaccNum" />
+
+    <ng-container *ngIf="shipperaccNumInvalid">
+      <app-validation-message validator="required" *ngIf="shipperaccNum?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="letters" *ngIf="shipperaccNum?.errors?.['letters']"></app-validation-message>
+    </ng-container>
+
+    <form class="tw-grid tw-grid-flow-col tw-gap-3 tw-justify-center">
+      <input type="radio" formControlName="shipperTitle" value="Mr." />
+        <label>Mr.</label>  
+      <input type="radio" formControlName="shipperTitle" value="Mrs." />
+        <label>Mrs</label>
+    </form>
+
+    <ng-container *ngIf="shipperTitleInvalid">
+      <app-validation-message validator="required" *ngIf="shipperTitle?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper FirstName" class="form-control" formControlName="shipperFirstName" />
+
+    <ng-container *ngIf="shipperFirstNameInvalid">
+      <app-validation-message validator="required" *ngIf="shipperFirstName?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Surname" class="form-control" formControlName="shipperSurname" />
+
+    <ng-container *ngIf="shipperSurnameInvalid">
+      <app-validation-message validator="required" *ngIf="shipperSurname?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Company" class="form-control" formControlName="shipperCompany" />
+
+    <ng-container *ngIf="shipperCompanyInvalid">
+      <app-validation-message validator="required" *ngIf="shipperCompany?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper PhoneNumber" class="form-control" formControlName="shipperPhoneNumber" />
+
+    <ng-container *ngIf="shipperPhoneNumberInvalid">
+      <app-validation-message validator="required" *ngIf="shipperPhoneNumber?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="phoneNumber" *ngIf="shipperPhoneNumber?.errors?.['phoneNumber']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper MobileNumber" class="form-control" formControlName="shipperMobileNumber" />
+
+    <ng-container *ngIf="shipperMobileNumberInvalid">
+      <app-validation-message validator="required" *ngIf="shipperMobileNumber?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="mobile" *ngIf="shipperMobileNumber?.errors?.['mobile']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Email" class="form-control" formControlName="shipperEmail" />
+
+    <ng-container *ngIf="shipperEmailInvalid">
+      <app-validation-message validator="required" *ngIf="shipperEmail?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper House" class="form-control" formControlName="shipperHouse" />
+
+    <ng-container *ngIf="shipperHouseInvalid">
+      <app-validation-message validator="required" *ngIf="shipperHouse?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Building" class="form-control" formControlName="shipperBuilding" />
+
+    <ng-container *ngIf="shipperBuildingInvalid">
+      <app-validation-message validator="required" *ngIf="shipperBuilding?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Number" class="form-control" formControlName="shipperNumber" />
+
+    <ng-container *ngIf="shipperNumberInvalid">
+      <app-validation-message validator="required" *ngIf="shipperNumber?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Street" class="form-control" formControlName="shipperStreet" />
+
+    <ng-container *ngIf="shipperStreetInvalid">
+      <app-validation-message validator="required" *ngIf="shipperStreet?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper City" class="form-control" formControlName="shipperCity" />
+
+    <ng-container *ngIf="shipperCityInvalid">
+      <app-validation-message validator="required" *ngIf="shipperCity?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Barangay" class="form-control" formControlName="shipperBarangay" />
+
+    <ng-container *ngIf="shipperBarangayInvalid">
+      <app-validation-message validator="required" *ngIf="shipperBarangay?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Municipality" class="form-control" formControlName="shipperMunicipality" />
+
+    <ng-container *ngIf="shipperMunicipalityInvalid">
+      <app-validation-message validator="required" *ngIf="shipperMunicipality?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper Province" class="form-control" formControlName="shipperProvince" />
+
+    <ng-container *ngIf="shipperProvinceInvalid">
+      <app-validation-message validator="required" *ngIf="shipperProvince?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <ng-container *ngIf="shipperProvinceInvalid">
+      <app-validation-message validator="required" *ngIf="shipperProvince?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Shipper PostalCode" class="form-control" formControlName="shipperPostalCode" />
+
+    <ng-container *ngIf="shipperPostalCodeInvalid">
+      <app-validation-message validator="required" *ngIf="shipperPostalCode?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="shipperPostalCode?.errors?.['number']"></app-validation-message>
+      <app-validation-message validator="phoneNumber" *ngIf="shipperPostalCode?.errors?.['phoneNumber']"></app-validation-message>
+    </ng-container>
+
+    <form class="tw-grid tw-grid-flow-col tw-gap-3 tw-justify-center">
+      <input type="radio" formControlName="shipperPickup" value="Residential" />
+        <label>Residential</label>  
+      <input type="radio" formControlName="shipperPickup" value="Commercial" />
+        <label>Commercial</label>
+    </form>
+
+    <ng-container *ngIf="shipperPickupInvalid">
+      <app-validation-message validator="required" *ngIf="shipperPickup?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee accNum" class="form-control" formControlName="consigneeaccNum" />
+
+    <ng-container *ngIf="consigneeaccNumInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeaccNum?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="letters" *ngIf="consigneeaccNum?.errors?.['letters']"></app-validation-message>
+    </ng-container>
+
+    <form class="tw-grid tw-grid-flow-col tw-gap-3 tw-justify-center">
+      <input type="radio" formControlName="consigneeTitle" value="Mr." />
+        <label>Mr.</label>  
+      <input type="radio" formControlName="consigneeTitle" value="Mrs." />
+        <label>Mrs</label>
+    </form>
+
+    <ng-container *ngIf="consigneeTitleInvalid">
+      <app-validation-message> validator="required" *ngIf="consigneeTitle?.errors?.['required']" </app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee FirstName" class="form-control" formControlName="consigneeFirstName" />
+
+    <ng-container *ngIf="consigneeFirstNameInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeFirstName?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee SurName" class="form-control" formControlName="consigneeSurname" />
+
+    <ng-container *ngIf="consigneeSurnameInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeSurname?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Company" class="form-control" formControlName="consigneeCompany" />
+
+    <ng-container *ngIf="consigneeCompanyInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeCompany?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee PhoneNumber" class="form-control" formControlName="consigneePhoneNumber" />
+
+    <ng-container *ngIf="consigneePhoneNumberInvalid">
+      <app-validation-message validator="required" *ngIf="consigneePhoneNumber?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee MobileNumber" class="form-control" formControlName="consigneeMobileNumber" />
+
+    <ng-container *ngIf="consigneeMobileNumberInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeMobileNumber?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="mobile" *ngIf="consigneeMobileNumber?.errors?.['mobile']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Email" class="form-control" formControlName="consigneeEmail" />
+
+    <ng-container *ngIf="consigneeEmailInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeEmail?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee House" class="form-control" formControlName="consigneeHouse" />
+
+    <ng-container *ngIf="consigneeHouseInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeHouse?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Building" class="form-control" formControlName="consigneeBuilding" />
+
+    <ng-container *ngIf="consigneeBuildingInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeBuilding?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Number" class="form-control" formControlName="consigneeNumber" />
+
+    <ng-container *ngIf="consigneeNumberInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeNumber?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Street" class="form-control" formControlName="consigneeStreet" />
+
+    <ng-container *ngIf="consigneeStreetInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeStreet?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee City" class="form-control" formControlName="consigneeCity" />
+
+    <ng-container *ngIf="consigneeCityInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeCity?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Barangay" class="form-control" formControlName="consigneeBarangay" />
+
+    <ng-container *ngIf="consigneeBarangayInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeBarangay?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Municipality" class="form-control" formControlName="consigneeMunicipality" />
+
+    <ng-container *ngIf="consigneeMunicipalityInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeMunicipality?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee Province" class="form-control" formControlName="consigneeProvince" />
+
+    <ng-container *ngIf="consigneeProvinceInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeProvince?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Consignee PostalCode" class="form-control" formControlName="consigneePostalCode" />
+
+    <ng-container *ngIf="consigneePostalCodeInvalid">
+      <app-validation-message validator="required" *ngIf="consigneePostalCode?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="consigneePostalCode?.errors?.['number']"></app-validation-message>
+    </ng-container>
+
+    <form class="tw-grid tw-grid-flow-col tw-gap-3 tw-justify-center">
+      <input type="radio" formControlName="consigneeDeliver" value="Residential" />
+        <label>Residential</label>  
+      <input type="radio" formControlName="consigneeDeliver" value="Commercial" />
+        <label>Commercial</label>
+    </form>
+
+    <ng-container *ngIf="consigneeDeliverInvalid">
+      <app-validation-message validator="required" *ngIf="consigneeDeliver?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <label>Document</label>
+    <input type="checkbox" value="true" class="form-control" formControlName="document" />
+
+    <label>Items</label>
+    <input type="text" placeholder="Description" class="form-control" formControlName="description" />
+
+    <ng-container *ngIf="descriptionInvalid">
+      <app-validation-message validator="required" *ngIf="description?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="letters" *ngIf="description?.errors?.['letters']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Value" class="form-control" formControlName="value" />
+
+    <ng-container *ngIf="valueInvalid">
+      <app-validation-message validator="required" *ngIf="value?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="value?.errors?.['number']"></app-validation-message>
+    </ng-container>
+
+    <label>Location</label>
+    <input type="text" placeholder="Origin" class="form-control" formControlName="origin" />
+
+    <ng-container *ngIf="originInvalid">
+      <app-validation-message validator="required" *ngIf="origin?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="numberAndLetters" *ngIf="origin?.errors?.['numberAndLetters']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Destination" class="form-control" formControlName="destination" />
+
+    <ng-container *ngIf="destinationInvalid">
+      <app-validation-message validator="required" *ngIf="destination?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="numberAndLetters" *ngIf="destination?.errors?.['numberAndLetters']"></app-validation-message>
+    </ng-container>
+
+    <label>Package</label>
+    <input type="text" placeholder="Package Type" class="form-control" formControlName="packageType" />
+
+    <ng-container *ngIf="packageTypeInvalid">
+      <app-validation-message validator="required" *ngIf="packageType?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Weight" class="form-control" formControlName="weight" />
+
+    <ng-container *ngIf="weightInvalid">
+      <app-validation-message validator="required" *ngIf="weight?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="weight?.errors?.['number']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Quantity" class="form-control" formControlName="quantity" />
+
+    <ng-container *ngIf="quantityInvalid">
+      <app-validation-message validator="required" *ngIf="quantity?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="quantity?.errors?.['number']"></app-validation-message>
+    </ng-container>
+
+    <label>Dimensions</label>
+    <input type="text" placeholder="Length" class="form-control" formControlName="length" />
+
+    <ng-container *ngIf="lengthInvalid">
+      <app-validation-message validator="required" *ngIf="length?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="length?.errors?.['number']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Width" class="form-control" formControlName="width" />
+
+    <ng-container *ngIf="widthInvalid">
+      <app-validation-message validator="required" *ngIf="width?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="width?.errors?.['number']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Height" class="form-control" formControlName="height" />
+
+    <ng-container *ngIf="heightInvalid">
+      <app-validation-message validator="required" *ngIf="height?.errors?.['required']"></app-validation-message>
+      <app-validation-message validator="number" *ngIf="height?.errors?.['number']"></app-validation-message>
+    </ng-container>
+
+    <select class="form-control" formControlName="service">
+      <option selected disabled hidden>Choose Your Service</option>
+      <option>Express</option>
+      <option>Deferred</option>
+      <option>3 Days</option>
+      <option>5 Days</option>
+    </select>
+
+    <ng-container *ngIf="serviceInvalid">
+      <app-validation-message validator="required" *ngIf="service?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <select class="form-control" formControlName="commodity">
+      <option selected disabled hidden>Choose Your Commodity</option>
+      <option>Regular</option>
+      <option>Perishable</option>
+    </select>
+
+    <ng-container *ngIf="commodityInvalid">
+      <app-validation-message validator="required" *ngIf="commodity?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <select class="form-control" formControlName="instruction">
+      <option selected disabled hidden>Choose Your Instruction</option>
+      <option>HAL</option>
+      <option>ODA</option>
+      <option>OPA</option>
+      <option>Saturday</option>
+      <option>Sunday</option>
+      <option>Holiday</option>
+      <option>Shipment with Collection</option>
+    </select>
+
+    <ng-container *ngIf="instructionInvalid">
+      <app-validation-message validator="required" *ngIf="instruction?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Client Ref" class="form-control" formControlName="clientRef" />
+
+    <ng-container *ngIf="clientRefInvalid">
+      <app-validation-message validator="required" *ngIf="clientRef?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <label>Acceptance</label>
+    <select class="form-control" formControlName="acceptanceType">
+      <option selected disabled hidden>Acceptance Type</option>
+      <option>Business Hub</option>
+      <option>Pick Up</option>
+    </select>
+
+    <ng-container *ngIf="acceptanceTypeInvalid">
+      <app-validation-message validator="required" *ngIf="acceptanceType?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Account Number" class="form-control" formControlName="acceptanceAccNum" />
+
+    <ng-container *ngIf="acceptanceAccNumInvalid">
+      <app-validation-message validator="required" *ngIf="acceptanceAccNum?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <label>Payment</label>
+    <select class="form-control" formControlName="paymentType">
+      <option selected disabled hidden>Payment Type</option>
+      <option>Bill Shipper</option>
+      <option>Bill Consignee</option>
+      <option>Bill 3rd Party</option>
+    </select>
+
+    <ng-container *ngIf="paymentTypeInvalid">
+      <app-validation-message validator="required" *ngIf="paymentType?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Account Number" class="form-control" formControlName="paymentAccNum" />
+
+    <ng-container *ngIf="paymentAccNumInvalid">
+      <app-validation-message validator="required" *ngIf="paymentAccNum?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <label>Signature</label>
+    <input type="text" placeholder="Sender" class="form-control" formControlName="sender" />
+
+    <ng-container *ngIf="senderInvalid">
+      <app-validation-message validator="required" *ngIf="sender?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Recipient" class="form-control" formControlName="recipient" />
+
+    <ng-container *ngIf="recipientInvalid">
+      <app-validation-message validator="required" *ngIf="recipient?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Add Billing</button>
+  </form>
+</card>

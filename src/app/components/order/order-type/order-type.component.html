@@ -1,0 +1,153 @@
+<div class="order-type">
+  <div class="order-information">
+    <card class="type-container">
+      <div class="type" card-wrapper>
+        <div class="type-detail">
+          <div class="card-title-container">
+            <img class="logo" [src]="delivery" alt="card-title-container" />
+            <h1 class="card-title">Order Type</h1>
+          </div>
+          <button class="type-btn" (click)="saveSchedule()">Save</button>
+        </div>
+        <div class="tw-p-2 buttons">
+          <ng-container *ngFor="let type of types; let i = index">
+            <button
+              class="btn-primary"
+              [style]="selected == i ? 'background-color:#ff7733; color: white;' : 'background-color:white; color:#ff7733'"
+              (click)="selected == i ? selected == 1 : (selected = i)"
+            >
+              {{ type }}
+            </button>
+          </ng-container>
+        </div>
+        <label class="type-label">Date Delivered</label>
+        <div class="type-info" [formGroup]="dateTime">
+          <input form-control type="date" class="type-form-control" formControlName="date" />
+          <input form-control type="time" class="type-form-control" formControlName="time" />
+          <p>{{ schedule }}</p>
+        </div>
+      </div>
+    </card>
+    <card [formGroup]="item" class="item-info-container">
+      <div class="item-info" card-wrapper>
+        <div class="info-detail">
+          <div class="card-title-container">
+            <img class="logo" [src]="delivery" alt="card-title-container" />
+            <h1 class="card-title">Add item</h1>
+          </div>
+          <button class="info-btn" (click)="addItem()">Add</button>
+        </div>
+        <div class="sub-info">
+          <div class="sub-info-item">
+            <label for="description">Description</label>
+            <input
+              form-control
+              name="description"
+              type="text"
+              class="info-form-control"
+              placeholder="Item Description"
+              formControlName="description"
+            />
+          </div>
+          <div class="sub-info-item">
+            <label for="description">Weight (kg)</label>
+            <input form-control name="weight" type="text" class="info-form-control weight" placeholder="Weight" formControlName="weight" />
+          </div>
+        </div>
+      </div>
+    </card>
+
+    <hr />
+
+    <ng-container *ngFor="let item of itemList; let i = index">
+      <card class="item-container">
+        <div class="item" card-wrapper>
+          <div class="item-detail">
+            <div class="number-circle">
+              <i class="las la-box la-2xl"></i>
+              <h1 class="item-title">Item {{ i + 1 }}</h1>
+            </div>
+            <div class="minus-btn">
+              <i class="las la-times" (click)="removeItem(i)"></i>
+            </div>
+          </div>
+          <div class="sub-item-container">
+            <div class="sub-item">
+              <label>Description</label>
+              <p class="sub-item-value">{{ item.description }}</p>
+            </div>
+            <div class="sub-item">
+              <label> Weight</label>
+              <p class="sub-item-value">{{ item.weight }}</p>
+            </div>
+          </div>
+        </div>
+      </card>
+    </ng-container>
+  </div>
+
+  <div class="order-summary">
+    <card>
+      <div class="delivery-container" card-wrapper>
+        <div class="delivery-info">
+          <div class="card-title-container">
+            <img class="logo" [src]="delivery" alt="delivery-logo" />
+            <h1 class="card-title">Summary</h1>
+          </div>
+          <div class="pick-up">
+            <div class="map-container">
+              <i class="las la-map-marker"></i>
+            </div>
+            <h1 class="pick-up-title">Pick Up Location</h1>
+          </div>
+          <div class="pick-up-address">{{ pickUp.name }} | {{ pickUp.number }} | {{ pickUp.description }}</div>
+          <div class="pick-up">
+            <div class="map-container">
+              <i class="las la-map-marker" id="drop"></i>
+            </div>
+            <h1 class="pick-up-title">Drop Off Location</h1>
+          </div>
+          <div class="pick-up-address">{{ dropOff.name }} | {{ dropOff.number }} | {{ dropOff.description }}</div>
+          <div></div>
+        </div>
+        <hr class="horizontal-line" />
+        <div>
+          <div class="payment-type">
+            <div class="payment-container">
+              <i class="las la-money-check-alt"></i>
+            </div>
+            <h1 class="payment-title">Payment Type</h1>
+          </div>
+          <div class="payment-wrapper">
+            <div>
+              <div class="radio-container">
+                <input type="radio" name="#" value="COD" [checked]="true" (change)="onPaymentChange($event)" />
+                <label class="radio-label" for="COD">COD (Cash on Delivery)</label>
+              </div>
+              <div class="radio-container">
+                <input type="radio" name="#" value="GCash" (change)="onPaymentChange($event)" />
+                <label class="radio-label" for="Gcash">GCash E-money</label>
+              </div>
+            </div>
+            <div>
+              <p class="payment-title">Payment By:</p>
+              <select class="dropdown" (change)="onPaymentByChange($event)">
+                <option selected disabled hidden>Please Choose</option>
+                <option>Sender</option>
+                <option>Receiver</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <hr class="horizontal-line" />
+        <div class="fee">
+          <h1 class="delivery-fee">Delivery Fee</h1>
+          <p class="total-cost">₱ {{ fee }}</p>
+        </div>
+        <div class="btn-container">
+          <button class="btn-deliver" (click)="deliver()">Deliver Now!</button>
+        </div>
+      </div>
+    </card>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<section>
+  <div class="breadcrumbs">
+    <button
+      class="breadcrumbs-item"
+      *ngFor="let breadcrumb of breadcrumbs"
+      [routerLink]="breadcrumb.route"
+      routerLinkActive="is-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      {{ breadcrumb.name }}
+    </button>
+  </div>
+
+  <div class="tw-grow">
+    <select class="breadcrumb-select" #mySelect (change)="optionChange(mySelect.value)" *ngIf="statusList.length > 0">
+      <option disabled selected>Status</option>
+      <option *ngFor="let key of statusList">{{ key }}</option>
+    </select>
+
+    <button class="btn-action" (click)="navigateTo('add')" *ngIf="canAdd">
+      {{ buttonName }}
+    </button>
+  </div>
+</section>

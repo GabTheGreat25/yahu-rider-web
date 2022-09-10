@@ -1,0 +1,46 @@
+.card-body {
+  width: 100%;
+  border-collapse: collapse;
+
+  .card-row:nth-child(odd) {
+    background-color: #eeeef0;
+  }
+
+  .card-row {
+    @apply hover:tw-bg-slate-300;
+    cursor: pointer;
+
+    .card-header {
+      @apply tw-bg-primary tw-text-white;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+    .card-item {
+      border-bottom: 1px solid #dddddd;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      overflow-wrap: anywhere;
+    }
+  }
+}
+
+.pagination {
+  @apply tw-grid tw-grid-flow-col;
+  justify-content: end;
+  padding-top: 2rem;
+  .pagination-item {
+    @apply hover:tw-bg-white;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    &:first-child {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+    &:last-child {
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
+}

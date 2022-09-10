@@ -1,0 +1,64 @@
+section {
+  @apply tw-grid tw-grid-flow-col tw-items-center tw-justify-between tw-w-full;
+  padding: 1rem 0;
+  .breadcrumbs {
+    border: 1px solid #cbd2d9;
+    border-radius: 0.3rem;
+    display: inline-flex;
+    overflow: hidden;
+
+    .breadcrumbs-item {
+      background: #fff;
+      padding: 0.75rem;
+      padding-left: 1rem;
+      transition: background 0.2s linear;
+      position: relative;
+    }
+    .breadcrumbs-item:hover:after,
+    .breadcrumbs-item:hover {
+      background: #edf1f5;
+    }
+
+    .breadcrumbs-item.is-active:after,
+    .breadcrumbs-item.is-active {
+      @apply tw-bg-primary;
+      color: #fff;
+    }
+
+    .breadcrumbs-item:after,
+    .breadcrumbs-item:before {
+      background: white;
+      bottom: 0;
+      clip-path: polygon(50% 50%, -50% -50%, 0 100%);
+      content: "";
+      left: 100%;
+      position: absolute;
+      top: 0;
+      transition: background 0.2s linear;
+      width: 1rem;
+      z-index: 1;
+    }
+  }
+
+  .btn-action {
+    @apply tw-bg-white tw-text-primary;
+    border: 1px solid orange;
+    border-radius: 0.5rem;
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    text-align: center;
+    transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s, transform 0.1s;
+
+    &:hover {
+      @apply tw-bg-primary tw-text-white;
+      font-weight: bolder;
+      transform: scale(0.9);
+    }
+  }
+
+  .breadcrumb-select {
+    @apply tw-font-bold tw-text-primary tw-border-solid tw-border-2 tw-border-primary;
+    border-radius: 4px;
+    padding: 0.5em 3.5em 0.5em 1em;
+  }
+}

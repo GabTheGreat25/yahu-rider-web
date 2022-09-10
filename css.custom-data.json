@@ -1,0 +1,21 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@apply",
+      "description": "Add custom rule for tailwind @apply"
+    },
+    {
+      "name": "@layer",
+      "description": "Add custom rule for tailwind @layer"
+    },
+    {
+      "name": "@variants",
+      "description": "Add custom rule for tailwind @variants"
+    },
+    {
+      "name": "@screen",
+      "description": "Add custom rule for tailwind @screen"
+    }
+  ]
+}

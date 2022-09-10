@@ -1,0 +1,71 @@
+$box-shadow: #59595933;
+
+.container {
+  display: grid;
+  grid-template-rows: 5rem auto;
+  height: 100%;
+
+  .card {
+    @apply tw-rounded-xl tw-text-center;
+    display: grid;
+    margin: 2rem 10vw;
+    box-shadow: 10px 10px 30px 10px $box-shadow;
+    grid-template-rows: 4fr 1fr 1fr;
+
+    .title {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      grid-template-rows: 10fr 1fr;
+
+      .logo {
+        max-height: 40vh;
+        align-self: flex-end;
+        padding-bottom: 1rem;
+      }
+
+      .heading {
+        @apply tw-text-primary tw-text-5xl tw-font-semibold;
+      }
+    }
+
+    .info {
+      padding: 1rem;
+      @apply tw-text-lg tw-text-primary-neutral-dark tw-font-bold;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      .btn {
+        max-height: 3rem;
+        max-width: 15rem;
+      }
+
+      .create {
+        @apply tw-font-medium tw-text-primary-neutral-dark tw-px-5;
+        border: 2px solid #a5a5a5;
+        background-color: #ffffff;
+        justify-self: end;
+
+        &:hover {
+          background-color: #a5a5a5;
+          color: white;
+        }
+      }
+
+      .track {
+        @apply tw-px-7 tw-font-medium;
+        border: 2px solid #ff8e01;
+        color: white;
+
+        &:hover {
+          background-color: white;
+          color: #ff8e01;
+        }
+      }
+    }
+  }
+}

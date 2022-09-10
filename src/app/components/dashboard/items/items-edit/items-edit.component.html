@@ -1,0 +1,33 @@
+<card>
+  <form class="form-container tw-w-2/4 tw-mx-auto" card-wrapper [formGroup]="form" (submit)="updateItem(form)">
+    <h1 class="form-title">Update Items</h1>
+
+    <input type="text" placeholder="Tracking Number" class="form-control" formControlName="trackingNo" />
+    <ng-container *ngIf="trackingNoInvalid">
+      <app-validation-message validator="required" *ngIf="trackingNo?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Code" class="form-control" formControlName="code" />
+    <ng-container *ngIf="codeInvalid">
+      <app-validation-message validator="required" *ngIf="code?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Description" class="form-control" formControlName="description" />
+    <ng-container *ngIf="descriptionInvalid">
+      <app-validation-message validator="required" *ngIf="description?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Value" class="form-control" formControlName="value" />
+    <ng-container *ngIf="valueInvalid">
+      <app-validation-message validator="required" *ngIf="value?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Weight" class="form-control" formControlName="weight" />
+    <ng-container *ngIf="weightInvalid">
+      <app-validation-message validator="required" *ngIf="weight?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Update Items</button>
+  </form>
+</card>

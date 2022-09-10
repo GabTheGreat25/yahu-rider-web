@@ -1,0 +1,31 @@
+<section class="tracking-header">
+  <div class="tracking">
+    <div class="tracking-label">Tracking Number</div>
+    <p class="tracking-value">{{ trackingNumber }}</p>
+  </div>
+  <div class="tracking status">
+    <div class="tracking-label">Status</div>
+    <p class="tracking-value">{{ status }}</p>
+  </div>
+</section>
+
+<hr />
+
+<div class="tracking-location">
+  <div class="location-column">
+    <div class="location-header">
+      <icon icon="las la-map-marker"></icon>
+      <h1>Origin:</h1>
+    </div>
+    <p>{{ origin }}</p>
+  </div>
+  <div class="location-column">
+    <div class="location-header">
+      <icon icon="las la-map-marker"></icon>
+      <h1>Destination:</h1>
+    </div>
+    <p>{{ fullName }} | {{ fullAddress }}</p>
+  </div>
+</div>
+
+<hr />

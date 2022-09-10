@@ -1,0 +1,46 @@
+<main [lazyBgImage]="background" [isBg]="true">
+  <div class="white-box">
+    <div class="logo-box">
+      <img class="logo" [lazyBgImage]="loginImg" alt="loginImg" />
+    </div>
+    <div class="form-container">
+      <div class="form-content">
+        <div class="content">
+          <p class="title">Login</p>
+          <p class="info">Get us some of your information to get a free access to our website.</p>
+        </div>
+
+        <form class="form-group" [formGroup]="form">
+          <div class="login-form-group" [class.invalid]="credentialInvalid" [class.valid]="credentialValid">
+            <label for="credential">Email or Phone Number</label>
+            <input type="text" placeholder="Email or Phone Number" class="login-form-control" formControlName="credential" />
+          </div>
+
+          <div *ngIf="credentialInvalid && credential.touched">
+            <app-validation-message validator="required" *ngIf="credential?.errors?.['required']"> </app-validation-message>
+            <app-validation-message validator="credential" *ngIf="credential?.errors?.['credential']"></app-validation-message>
+          </div>
+
+          <div class="login-form-group" [class.invalid]="passwordInvalid" [class.valid]="passwordValid">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" class="login-form-control" formControlName="password" />
+          </div>
+
+          <div *ngIf="passwordInvalid && password.touched">
+            <app-validation-message validator="required" *ngIf="password?.errors?.['required']"> </app-validation-message>
+            <app-validation-message validator="password" *ngIf="password?.errors?.['password']"> </app-validation-message>
+          </div>
+
+          <span class="tw-text-red-400" *ngIf="form.errors">*{{ errors }}</span>
+          <div class="tw-grid tw-grid-flow-row tw-gap-4">
+            <button type="submit" class="btn" [disabled]="form.invalid" (click)="login()">Login</button>
+            <p class="tw-text-center">
+              Not a member? Become part of our community!
+              <button routerLink="/register" class="tw-text-primary tw-font-bold tw-underline">Register Here</button>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

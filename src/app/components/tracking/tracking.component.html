@@ -1,0 +1,26 @@
+<div class="tracking-page">
+  <navbar [logo]="logo" [projectName]="projectName"></navbar>
+
+  <ng-container *ngIf="router.url === '/tracking'">
+    <section class="search" [lazyBgImage]="background" [isBg]="true">
+      <div class="tracking-wrapper">
+        <span class="track-icon">
+          <img class="logo" [lazyBgImage]="delivery" alt="loginImg" />
+        </span>
+        <div class="tracking-container">
+          <div class="searchBox" [formGroup]="form">
+            <span class="icon-search">
+              <i class="las la-search-location"></i>
+            </span>
+            <input type="text" formControlName="refNum" class="mainInput" placeholder="Enter Tracking Number to track your package" />
+            <button class="trackButton" [disabled]="form.invalid" (click)="navigate()">Track</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </ng-container>
+
+  <section class="timeline" [lazyBgImage]="background" [isBg]="true" *ngIf="router.url !== '/tracking'">
+    <router-outlet></router-outlet>
+  </section>
+</div>

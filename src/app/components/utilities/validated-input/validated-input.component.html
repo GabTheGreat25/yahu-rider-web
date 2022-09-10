@@ -1,0 +1,4 @@
+<ng-content select="[form-control]"></ng-content>
+<ng-container *ngIf="control.invalid && control.touched">
+  <app-validation-message *ngIf="control?.errors?.['required'] && _show" validator="required"></app-validation-message>
+</ng-container>

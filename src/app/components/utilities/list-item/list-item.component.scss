@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  @apply tw-justify-center;
+}
+
+.card-icon {
+  @apply tw-grid tw-grid-flow-col tw-gap-3;
+  font-size: 1.5rem;
+}
+
+.icon-edit {
+  @apply tw-text-blue-600;
+}
+
+.icon-delete {
+  @apply tw-text-red-600;
+}
+
+img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+}
+
+.btn-green {
+  @apply tw-bg-white tw-border-primary tw-border-2 tw-text-primary;
+  @apply hover:tw-bg-primary hover:tw-text-white;
+  @apply tw-font-bold tw-py-2 tw-px-4 tw-rounded-full;
+  min-width: 10rem;
+  max-width: 15rem;
+}

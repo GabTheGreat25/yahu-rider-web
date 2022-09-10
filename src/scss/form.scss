@@ -1,0 +1,50 @@
+.focus-normal {
+  @apply tw-ring-2 tw-ring-neutral-800;
+}
+
+.form-container {
+  @apply tw-grid tw-items-center;
+  position: relative;
+
+  .form-group-col {
+    @apply tw-grid tw-grid-flow-col tw-gap-3;
+  }
+
+  input.form-control,
+  textarea.form-control,
+  select.form-control {
+    @apply tw-relative tw-ring-2 tw-ring-neutral-400 tw-outline-none tw-p-2 tw-rounded-lg tw-bg-neutral-50 tw-w-full tw-transition-all tw-duration-300;
+    &:focus {
+      @apply tw-ring-2 tw-ring-neutral-500;
+    }
+    &.ng-invalid.ng-touched {
+      @apply tw-ring-2 tw-ring-opacity-70 tw-ring-red-500;
+    }
+    &.ng-valid.ng-touched {
+      @apply tw-ring-2 tw-ring-opacity-70 tw-ring-green-500;
+    }
+  }
+
+  .form-title {
+    @apply tw-text-2xl tw-font-bold tw-text-center;
+  }
+
+  .form-section {
+    @apply tw-grid tw-gap-4;
+    .form-title {
+      @apply tw-text-lg tw-font-bold tw-mb-4;
+    }
+
+    input {
+      @apply tw-mb-5;
+    }
+  }
+}
+
+.icon-input {
+  @apply tw-relative;
+  button,
+  span {
+    @apply tw-absolute tw-inset-y-0 tw-right-0 tw-pr-3 tw-grid tw-items-center;
+  }
+}

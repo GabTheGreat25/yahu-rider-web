@@ -1,0 +1,17 @@
+<section class="container">
+  <navbar [logo]="logo" [projectName]="projectName"></navbar>
+  <div class="card">
+    <div class="title">
+      <img class="logo" [src]="vector" alt="vector" />
+      <h1 class="heading">Your Order Has Been Placed</h1>
+    </div>
+    <div class="info">
+      <p>Thank you for placing your order with us!</p>
+      <p>Click the button to track your order.</p>
+    </div>
+    <div class="buttons">
+      <button class="btn create" (click)="goToOrder()">Create another order</button>
+      <button class="btn track" (click)="goToTracking()">Track your order</button>
+    </div>
+  </div>
+</section>

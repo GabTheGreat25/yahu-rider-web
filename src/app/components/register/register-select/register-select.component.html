@@ -1,0 +1,13 @@
+<section class="container">
+  <div class="card" [lazyBgImage]="bg" [isBg]="true">
+    <register-card
+      class="card-item"
+      *ngFor="let card of cards"
+      (onClick)="card.type === 'User' ? goToUser() : goToRider()"
+      [image]="card.image"
+      [title]="card.title"
+      [body]="card.body"
+      [button]="card.button"
+    ></register-card>
+  </div>
+</section>

@@ -1,0 +1,203 @@
+<div class="rider-container">
+  <div class="rider-card">
+    <div class="btn-container">
+      <button class="btn-edit">Edit</button>
+    </div>
+    <div class="rider-wrapper">
+      <div class="image-container">
+        <div class="image-wrapper">
+          <img [src]="rider.avatar" alt="avatar" />
+        </div>
+        <div class="rider-status">
+          <h1>{{ rider.status }}</h1>
+        </div>
+      </div>
+      <div class="rider-title">
+        <h1 class="rider-name">{{ rider.firstName }} {{ rider.lastName }}</h1>
+        <p class="rider-motor">Motorcycle Rider</p>
+      </div>
+
+      <hr class="horizontal-line" />
+      <div class="rider-body">
+        <div class="detail-container">
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Last Login:</h1>
+            </div>
+            <div class="detail-body">
+              <p class="detail-date">{{ getFormatedDate(rider.lastLogin, "MM/dd/yyyy | h:mm") }}</p>
+            </div>
+          </div>
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Phone Number:</h1>
+            </div>
+            <div class="detail-body">
+              <p class="detail-date">{{ rider.phoneNumber }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-container">
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Email Address:</h1>
+            </div>
+            <div class="detail-body">
+              <p class="detail-date">{{ rider.email }}</p>
+            </div>
+          </div>
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Birth Date:</h1>
+            </div>
+            <div class="detail-body">
+              <p class="detail-date">{{ getFormatedDate(rider.birthday, "MM/dd/yyyy") }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-container">
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Residential Address:</h1>
+            </div>
+            <div class="detail-body">
+              <p class="detail-date">{{ rider.address }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-container">
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Vehicle Type:</h1>
+            </div>
+            <div class="detail-body">
+              <p class="detail-date">{{ rider.vehicle.type }}</p>
+            </div>
+          </div>
+
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Vehicle Model:</h1>
+            </div>
+
+            <div class="detail-body">
+              <p class="detail-date">{{ rider.vehicle.vehicleModel }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-container">
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Vehicle Color:</h1>
+            </div>
+            <div class="detail-body">
+              <p class="detail-date">{{ rider.vehicle.color }}</p>
+            </div>
+          </div>
+
+          <div class="detail">
+            <div class="detail-title">
+              <h1>Vehicle Plate Number:</h1>
+            </div>
+
+            <div class="detail-body">
+              <p class="detail-date">{{ rider.vehicle.plateNumber }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-detail">
+    <div class="license-card">
+      <div class="license">
+        <div class="license-detail">
+          <h1 class="license-title">License</h1>
+          <button class="license-btn">Edit</button>
+        </div>
+        <div class="license-container">
+          <div class="license-detail">
+            <h1 class="title-number">License Number:</h1>
+            <p class="license-number">{{ rider.license.number }}</p>
+          </div>
+          <div class="license-image">
+            <h1 class="front-license-image">Front Image:</h1>
+            <div class="license-upload">
+              <h1 class="upload-title">Upload Media/Center</h1>
+            </div>
+          </div>
+        </div>
+
+        <div class="date-container">
+          <div class="date-detail">
+            <h1 class="date-title">Issue Date:</h1>
+            <p class="issued-date">{{ getFormatedDate(rider.license.issuedDate, "MM/dd/yyyy") }}</p>
+          </div>
+          <div class="date-detail">
+            <h1 class="date-title">Licensed Class:</h1>
+            <p class="issued-date">{{ rider.license.class }}</p>
+          </div>
+          <div class="date-image">
+            <h1 class="image-title">Back Image:</h1>
+            <div class="date-upload">
+              <h1 class="upload-title">Upload Media/Center</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="orcr-card">
+      <div class="orcr">
+        <div class="edit-container">
+          <h1 class="orcr-title">Vehicle OR</h1>
+          <button class="orcr-edit">Edit</button>
+        </div>
+
+        <div class="orcr-container">
+          <div class="orcr-detail">
+            <h1 class="orcr-title-number">OR Number:</h1>
+            <p class="orcr-number">{{ rider.or.number }}</p>
+          </div>
+          <div class="orcr-detail">
+            <h1 class="orcr-title-number">Issue Issue Date:</h1>
+            <p class="orcr-date">{{ getFormatedDate(rider.or.issuedDate, "MM/dd/yyyy") }}</p>
+          </div>
+          <div class="orcr-image">
+            <h1 class="orcr-title-image">Image:</h1>
+            <div class="orcr-upload">
+              <h1 class="orcr-title-upload">Upload Media/Center</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="orcr-card">
+      <div class="orcr">
+        <div class="edit-container">
+          <h1 class="orcr-title">Vehicle CR</h1>
+          <button class="orcr-edit">Edit</button>
+        </div>
+
+        <div class="orcr-container">
+          <div class="orcr-detail">
+            <h1 class="orcr-title-number">CR Number:</h1>
+            <p class="orcr-number">{{ rider.cr.number }}</p>
+          </div>
+          <div class="orcr-detail">
+            <h1 class="orcr-title-number">Issue Date:</h1>
+            <p class="orcr-date">{{ getFormatedDate(rider.cr.issuedDate, "MM/dd/yyyy") }}</p>
+          </div>
+          <div class="orcr-image">
+            <h1 class="orcr-title-image">Image:</h1>
+            <div class="orcr-upload">
+              <h1 class="orcr-title-upload">Upload Media/Center</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

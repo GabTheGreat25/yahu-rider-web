@@ -1,0 +1,48 @@
+<div class="form-container" [formGroup]="form">
+  <validated-input [control]="street" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="street" placeholder="Street " (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="building" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="building" placeholder="Building " (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="description" [showErrorMessage]="showErrorMessage">
+    <input
+      form-control
+      type="text"
+      class="form-control"
+      formControlName="description"
+      placeholder="Description "
+      (blur)="removeMessage()"
+    />
+  </validated-input>
+
+  <validated-input [control]="region" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="region" placeholder="Region" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="barangay" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="barangay" placeholder="Barangay" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="city" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="city" placeholder="City" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="province" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="province" placeholder="Province" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="zipCode" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="zipCode" placeholder="zipCode" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="lat" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="lat" placeholder="lat" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="lng" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="lng" placeholder="lng" (blur)="removeMessage()" />
+  </validated-input>
+</div>

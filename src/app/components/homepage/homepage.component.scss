@@ -1,0 +1,55 @@
+.body {
+  display: grid;
+  grid-template-rows: 5rem auto;
+  height: 100%;
+
+  .wrapper {
+    display: grid;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 45rem));
+      grid-auto-rows: auto;
+      place-content: center;
+      row-gap: 2rem;
+
+      .intro {
+        display: grid;
+        grid-template-rows: 28rem 5rem;
+        justify-content: center;
+        gap: 1rem;
+        padding-left: 20%;
+
+        .greeting {
+          display: grid;
+          align-self: end;
+          grid-template-rows: repeat(2, 4rem) 6rem 6rem;
+          font-size: 3.5rem;
+          font-weight: bold;
+          row-gap: 0.5rem;
+
+          .register {
+            @apply tw-mt-6 tw-text-3xl tw-p-4 tw-font-semibold;
+            max-width: 25rem;
+          }
+        }
+
+        .description {
+          display: grid;
+          grid-template-rows: 2rem 2rem;
+          font-size: 1.5rem;
+          min-width: 45rem;
+          @apply tw-font-semibold tw-text-primary-neutral-dark;
+        }
+      }
+
+      .image {
+        place-self: center;
+        max-height: 40rem;
+      }
+    }
+  }
+}

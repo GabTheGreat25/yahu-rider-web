@@ -1,0 +1,30 @@
+{
+  "css.customData": ["./css.custom-data.json"],
+  "cSpell.words": ["angularx", "qrcode", "semibold"],
+  "conventionalCommits.scopes": [
+    "interface",
+    "component",
+    "settings",
+    "dependency",
+    "states",
+    "services",
+    "source",
+    "pages",
+    "utility",
+    "routing",
+    "constants",
+    "styles",
+    "store",
+    "actions",
+    "effects",
+    "query",
+    "guards",
+    "modul",
+    "module",
+    "auth",
+    "package",
+    "asset",
+    "interceptor",
+    "order"
+  ]
+}

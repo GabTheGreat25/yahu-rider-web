@@ -1,0 +1,20 @@
+<card>
+  <form class="form-container tw-w-2/4 tw-mx-auto" [formGroup]="form" card-wrapper (submit)="addHub(form)">
+    <h1 class="form-title">Add User</h1>
+
+    <validated-input [control]="name" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="name" placeholder="Hub Name" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="latitude" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="latitude" placeholder="Latitude" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="longitude" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="longitude" placeholder="Longitude" (blur)="removeMessage()" />
+    </validated-input>
+
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Add Hub</button>
+  </form>
+</card>

@@ -1,0 +1,41 @@
+<div class="container">
+  <!-- ITEM is text -->
+  <div *ngIf="header.type === 'text' && !header?.childFields?.length">
+    {{ row[header.dataField] }}
+  </div>
+
+  <!-- ITEM is name -->
+  <div *ngIf="header.type === 'name'">{{ row["title"] ?? "" }}{{ row["firstName"] }} {{ row["lastName"] ?? row["surname"] }}</div>
+
+  <!-- ITEM is image -->
+  <img [class]="header.image?.alt" *ngIf="header.type === 'image'" [src]="row[header.dataField]" [alt]="header.image?.alt" />
+
+  <!-- ITEM is Action button -->
+  <div class="card-icon" *ngIf="header.type === 'action'">
+    <button *ngFor="let action of header?.actions" (click)="action?.name === 'edit' ? onEdit(row) : onDelete(row)">
+      <em [ngClass]="[action?.class, 'icon-' + action?.name]"></em>
+    </button>
+  </div>
+
+  <!-- ITEM HAS SUB FIELDS -->
+  <div class="tw-grid tw-grid-flow-col tw-gap-3" *ngIf="header.childFields?.length">
+    <div *ngFor="let field of header.childFields">
+      {{ row[header.dataField][field] }}
+    </div>
+  </div>
+
+  <div *ngIf="header.type === 'button'" class="btn-green">
+    <button (click)="onButtonClick(row[header.dataField])">
+      {{ header?.button?.name }}
+    </button>
+  </div>
+
+  <!-- ITEM IS ADDRESS -->
+  <div *ngIf="header.type === 'address'">{{ row["barangay"] }}, {{ row["city"] }}, {{ row["province"] }} {{ row["postalCode"] }}</div>
+
+  <!-- ITEM IS DATE -->
+  <div *ngIf="header.type === 'date'">{{ getFormatedDate(row["data"]) }}</div>
+
+  <!-- ITEM IS BIRTHDAY -->
+  <div *ngIf="header.type === 'birthday'">{{ getFormatedDate(row["birthday"]) }}</div>
+</div>

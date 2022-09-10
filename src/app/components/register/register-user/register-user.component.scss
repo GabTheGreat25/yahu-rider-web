@@ -1,0 +1,89 @@
+.register-user-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .register-user-wrapper {
+    padding: 2rem;
+    display: grid;
+    grid-auto-flow: row;
+    gap: 0.25rem;
+
+    .register-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fb7702;
+    }
+
+    .register-info {
+      font-weight: 400;
+    }
+
+    .form-container {
+      display: grid;
+      grid-auto-flow: row;
+      gap: 0.75rem;
+
+      .register-form-control {
+        width: 100%;
+        padding: 1rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        height: 2.5rem;
+        &.ng-invalid.ng-touched {
+          @apply tw-ring-2 tw-ring-opacity-70 tw-ring-red-500;
+        }
+        &.ng-valid.ng-touched {
+          @apply tw-ring-2 tw-ring-opacity-70 tw-ring-green-500;
+        }
+      }
+    }
+
+    .check-box {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #fb7702;
+    }
+
+    .check-title {
+      @apply tw-text-primary-neutral-dark;
+      padding-left: 0.5rem;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .title-info {
+      color: #fb7702;
+    }
+
+    .btn-container {
+      @apply tw-grid tw-place-content-center tw-pt-3;
+
+      .btn-register-user {
+        padding: 0.75rem 2rem;
+        color: #fb7702;
+        border: 1.75px solid #fb7702;
+        border-radius: 0.65rem;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+    }
+
+    .account-container {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 15rem auto;
+
+      .account-title {
+        @apply tw-text-primary-neutral-dark;
+      }
+
+      .log-in {
+        text-decoration: underline;
+        color: #fb7702;
+        font-weight: 600;
+      }
+    }
+  }
+}

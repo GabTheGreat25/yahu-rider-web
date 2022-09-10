@@ -1,0 +1,100 @@
+section {
+  @apply tw-pt-16 tw-pb-12;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  .white-box {
+    @apply tw-bg-white;
+    width: 60rem;
+    min-height: 40vh;
+    border-radius: 2px;
+    box-shadow: 0px 2px 14px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+  }
+  .register-header {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .head {
+      @apply tw-text-4xl tw-font-bold;
+      color: orangered;
+    }
+
+    .header-info {
+      @apply tw-font-semibold;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+  .register-body {
+    padding-top: 1rem;
+    place-items: center;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    position: sticky;
+  }
+
+  .body-label {
+    @apply tw-pb-2;
+  }
+
+  .body-info {
+    @apply tw-grid-flow-row tw-pb-4;
+    display: grid;
+  }
+
+  .register-form-control {
+    width: 100%;
+    padding: 1rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    height: 2.5rem;
+    &.ng-invalid.ng-touched {
+      @apply tw-ring-2 tw-ring-opacity-70 tw-ring-red-500;
+    }
+    &.ng-valid.ng-touched {
+      @apply tw-ring-2 tw-ring-opacity-70 tw-ring-green-500;
+    }
+  }
+
+  .btn-submit {
+    @apply tw-text-xl tw-font-semibold;
+    color: orangered;
+    background-color: white;
+    border: 2px solid orangered;
+    padding: 0.65rem 2.5rem;
+    transition-duration: 0.4s;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: orangered;
+      color: white;
+    }
+
+    &:disabled {
+      color: black;
+      background-color: white;
+      border: 2px solid black;
+    }
+  }
+
+  [type="file"] {
+    @apply tw-text-gray-400;
+    border: 1px solid #ccc;
+    padding: 0.35rem 1rem;
+    font-size: 1rem;
+    &.ng-invalid.ng-touched {
+      @apply tw-ring-2 tw-ring-opacity-70 tw-ring-red-500;
+    }
+    &.ng-valid.ng-touched {
+      @apply tw-ring-2 tw-ring-opacity-70 tw-ring-green-500;
+    }
+  }
+}

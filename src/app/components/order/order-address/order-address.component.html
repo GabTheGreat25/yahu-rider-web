@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="order">
+    <div class="sidenav">
+      <div class="sidenav__header">
+        <img class="image logo" [lazyBgImage]="logo" alt="logo" />
+        <img class="image rider" [lazyBgImage]="rider" alt="rider" />
+      </div>
+
+      <div class="route">
+        <h1 class="route__title">Create Parcels</h1>
+        <p class="header">Route</p>
+        <div class="route__form">
+          <div class="side">
+            <i class="las la-map-marker" [ngClass]="{ active: showPickUp }"></i>
+            <div class="middle">
+              <div class="circle"></div>
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+            <i class="las la-map-marker drop" [ngClass]="{ active: showDropOff }"></i>
+          </div>
+          <ng-container *ngFor="let field of fields" [formGroup]="form">
+            <div class="field">
+              <input
+                type="text"
+                placeholder="{{ field.placeholder }}"
+                class="field"
+                [formControlName]="field.type === 'pickUp' ? 'pickUpField' : 'dropOffField'"
+                ngx-google-places-autocomplete
+                [options]="autoCompleteOptions"
+                (onAddressChange)="changeAddress($event, field.type)"
+                (focus)="showForm(field.type)"
+              />
+              <address-info
+                [show]="isShowForm(field.type)"
+                (save)="saveInfo($event, field.type)"
+                (close)="closeForm(field.type)"
+                title="{{ field.title }}"
+              ></address-info>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div>
+        <card id="delivery-card" *ngIf="showPickUp || showDropOff">
+          <div class="delivery" card-wrapper>
+            <div class="head">
+              <div class="title-info">Delivery Information</div>
+              <icon (onClick)="clear()"></icon>
+            </div>
+            <address
+              *ngIf="showPickUp"
+              title="Pick Up Location"
+              [name]="pickUp.name"
+              [number]="pickUp.number"
+              [description]="pickUp.description"
+            ></address>
+            <address
+              *ngIf="showDropOff"
+              title="Drop Off Location"
+              [name]="dropOff.name"
+              [number]="dropOff.number"
+              [description]="dropOff.description"
+              color="#ff7733"
+            ></address>
+          </div>
+        </card>
+      </div>
+
+      <div class="deliver">
+        <button class="btn" (click)="next()" [disabled]="!(showPickUp && showDropOff)">Next</button>
+      </div>
+    </div>
+
+    <app-map [center]="center"></app-map>
+  </div>
+</div>

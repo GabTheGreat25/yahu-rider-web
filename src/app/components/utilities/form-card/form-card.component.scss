@@ -1,0 +1,46 @@
+// UTILITY CLASS
+
+.rows {
+  @apply grid gap-2 items-center;
+}
+.cols {
+  @apply grid grid-flow-col gap-4 items-center;
+}
+
+div.form-card {
+  max-width: 25rem !important;
+  @apply max-w-2xl bg-white border-neutral-100 border-4 rounded-xl mx-auto relative;
+  @apply shadow-lg hover:shadow-xl transition duration-500 rounded-lg p-8;
+  .close-btn {
+    @apply absolute;
+    left: 90%;
+    top: 1rem;
+    &:empty {
+      display: none;
+    }
+  }
+  .card-header {
+    @apply rows mb-3;
+  }
+  .card-body {
+    @apply rows;
+    .name {
+      @apply rows;
+      @screen md {
+        @apply cols;
+      }
+    }
+    .group {
+      @apply rows;
+      @screen md {
+        @apply cols;
+      }
+    }
+  }
+  .card-footer {
+    @apply mt-3;
+    &:empty {
+      display: none;
+    }
+  }
+}

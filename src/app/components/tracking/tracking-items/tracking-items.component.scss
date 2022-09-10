@@ -1,0 +1,16 @@
+.btn-container {
+  @apply tw-mt-6;
+  display: flex;
+  justify-content: center;
+
+  .btn-outline {
+    @apply tw-text-xl tw-font-semibold;
+    padding: 0.65rem 2.5rem;
+    transition-duration: 0.4s;
+
+    &:hover {
+      background-color: orangered;
+      color: white;
+    }
+  }
+}

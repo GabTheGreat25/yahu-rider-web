@@ -1,0 +1,11 @@
+<app-list
+  [headers]="headers"
+  [paginations]="paginations"
+  [rows]="rows"
+  (edit)="onEdit($event)"
+  (delete)="onDelete($event)"
+  [pageWidth]="3"
+  (pageClick)="onPageClick($event)"
+  (detail)="onDetail($event)"
+>
+</app-list>

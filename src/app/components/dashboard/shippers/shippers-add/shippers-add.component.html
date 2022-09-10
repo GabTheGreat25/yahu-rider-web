@@ -1,0 +1,14 @@
+<card>
+  <form class="form-container tw-w-4/5 tw-mx-auto" [formGroup]="form" card-wrapper (submit)="addShipper($event)">
+    <h1 class="form-title">Add Shipper</h1>
+    <account-profile-form formControlName="accountProfile"></account-profile-form>
+    <select name="pickup" class="form-control" formControlName="pickup">
+      <option value="">Pickup Location Type</option>
+      <option value="Residential">Residential</option>
+      <option value="Commercial">Commercial</option>
+    </select>
+    <account-address-form formControlName="accountAddress"></account-address-form>
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Add Shipper</button>
+  </form>
+</card>

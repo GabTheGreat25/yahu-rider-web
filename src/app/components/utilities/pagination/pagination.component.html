@@ -1,0 +1,10 @@
+<div class="pagination" pagination>
+  <button
+    class="pagination-item"
+    *ngFor="let page of _pagination"
+    (click)="onClick(page)"
+    [ngClass]="{ active: page === selectedPage.toString() }"
+  >
+    {{ page }}
+  </button>
+</div>

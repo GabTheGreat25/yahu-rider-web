@@ -1,0 +1,14 @@
+<card>
+  <form class="form-container tw-w-4/5 tw-mx-auto" [formGroup]="form" card-wrapper (submit)="updateConsignee($event)">
+    <h1 class="form-title">Edit Consignee</h1>
+    <account-profile-form formControlName="accountProfile"></account-profile-form>
+    <select name="delivery" class="form-control" formControlName="delivery">
+      <option value="">Delivery Location Type</option>
+      <option value="Residential">Residential</option>
+      <option value="Commercial">Commercial</option>
+    </select>
+    <account-address-form formControlName="accountAddress"></account-address-form>
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Edit Consignee</button>
+  </form>
+</card>

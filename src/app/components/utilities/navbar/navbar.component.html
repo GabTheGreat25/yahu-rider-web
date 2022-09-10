@@ -1,0 +1,59 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-image">
+      <img [src]="logo" alt="navbar-logo" class="navbar-logo" />
+      <span class="navbar-info">{{ projectName }}</span>
+    </div>
+
+    <div class="navbar-right" [ngClass]="{ 'is-login': isLogin }">
+      <div class="nav-links">
+        <ng-container *ngFor="let tab of tabs">
+          <a
+            class="tab"
+            *ngIf="tab.name.toLowerCase() === 'orders' && isLogin"
+            [routerLink]="tab.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ tab.name }}
+          </a>
+          <a
+            class="tab"
+            *ngIf="tab.name.toLowerCase() !== 'orders'"
+            [routerLink]="tab.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            {{ tab.name }}
+          </a>
+        </ng-container>
+        <a class="tab" *ngIf="!isLogin" [routerLink]="'/login'" routerLinkActive="active"> Login </a>
+      </div>
+
+      <div *ngIf="isLogin" class="profile">
+        <ul class="navbar-wrapper">
+          <li clickOutside (clickOutside)="clickOutside()">
+            <a (click)="onHide()" class="dropdown tw-flex tw-items-center">
+              <img *ngIf="avatar !== ''" class="avatar" [src]="avatar" alt="avatar" />
+            </a>
+            <div class="dropdown-menu" *ngIf="isHidden">
+              <button class="dropdown-item">
+                <em class="las la-user-edit la-lg"></em>
+                Edit Profile
+              </button>
+              <button class="dropdown-item">
+                <em class="las la-cog la-lg"></em>
+                Settings
+              </button>
+              <div class="dropdown-divider"></div>
+              <button class="dropdown-item" (click)="logout()">
+                <em class="las la-sign-out-alt la-lg"></em>
+                Log Out
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

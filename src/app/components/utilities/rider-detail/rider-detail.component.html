@@ -1,0 +1,140 @@
+<div class="rider-container">
+  <div class="rider-detail">
+    <ul>
+      <ng-container *ngFor="let field of fields">
+        <li *ngIf="field.type === 'image'" class="image-container">
+          <img [class]="field.image?.alt" [src]="data[field.dataField]" [alt]="field.image?.alt" id="rider-img" />
+        </li>
+      </ng-container>
+      <div class="rider-login">
+        <p class="rider-status">Active</p>
+
+        <div class="rider-card">
+          <div class="card-info">
+            <div class="tw-pl-10">Last Login: April 25, 2022 3:30pm</div>
+          </div>
+        </div>
+      </div>
+      <div class="tw-grid tw-justify-end">
+        <div class="rider-card">
+          <div class="card-info">
+            <div class="tw-pt-1">Total Delivery: 200</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-container">
+        <ng-container *ngFor="let field of fields">
+          <li *ngIf="field.type === 'text'">
+            <div class="sub-header">{{ field.text }}:</div>
+            <p class="header-info">{{ data[field.dataField] }}</p>
+          </li>
+          <li *ngIf="field.type === 'name'">
+            <div class="sub-header">{{ field.text }}:</div>
+            <p class="header-info">{{ data["title"] ?? "" }} {{ data["firstName"] }} {{ data["lastName"] ?? data["surname"] }}</p>
+          </li>
+          <li *ngIf="field.type === 'address'">
+            <div class="sub-header">{{ field.text }}:</div>
+            <p class="header-info">
+              {{ data["home"] ?? "" }} {{ data["building"] ?? "" }} {{ data["street"] }} <br />
+              {{ data["barangay"] }}, {{ data["city"] }}, {{ data["province"] }} {{ data["postalCode"] }}
+            </p>
+          </li>
+        </ng-container>
+        <li>
+          <div class="sub-header">Email Address:</div>
+          <p class="header-info">Johndoe@gmail.com</p>
+        </li>
+        <li>
+          <div class="sub-header">Birthdate:</div>
+          <p class="header-info">December 15, 1997</p>
+        </li>
+      </div>
+      <div class="card-address">
+        <p class="address-title">Residential Address:</p>
+        156 Sto. Nino De Pasig Brgy. Sta Cruz, Antipolo Rizal ,VapeHub Cogeo, Antipolo, Rizal, Philippines
+      </div>
+    </ul>
+    <div class="tw-grid tw-justify-center tw-pb-4">
+      <button class="btn-submit">Save</button>
+    </div>
+  </div>
+
+  <div class="sub-detail">
+    <ul>
+      <div class="tw-pt-8 tw-pb-6">
+        <div class="card-license">
+          <p class="license-title">Licensed Number:</p>
+          <div class="license-info">
+            <div class="license-img">
+              <div>
+                <p class="img-header">Front Image</p>
+                <div class="img-body">
+                  <span class="icon">
+                    <i class="las la-cloud-upload-alt"></i>
+                  </span>
+                  <button class="tw-font-semibold">Upload Media/Center</button>
+                </div>
+              </div>
+              <div>
+                <div class="tw-py-1"></div>
+                <p class="img-header">Back Image</p>
+                <div class="img-body">
+                  <span class="icon">
+                    <i class="las la-cloud-upload-alt"></i>
+                  </span>
+                  <button class="tw-font-semibold">Upload Media/Center</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="license-number">
+              <div class="number-info">
+                Licensed Number:
+                <span class="sub-info">FA-D3-LK3</span>
+              </div>
+              <div class="number-info">Licensed Issue Date: <span class="sub-info">September 25, 2001</span></div>
+              <div class="number-info">Licensed Class: <span class="sub-info">Motorcycle</span></div>
+              <div class="tw-grid tw-justify-center tw-py-4">
+                <button class="btn-submit">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-type">
+        <p class="type-title">OR/CR Number:</p>
+        <div class="type-info">
+          <div>
+            <p class="type-header">Front Image</p>
+            <div class="type-body">
+              <span class="icon">
+                <i class="las la-cloud-upload-alt"></i>
+              </span>
+              <button class="tw-font-semibold">Upload Media/Center</button>
+            </div>
+          </div>
+          <div>
+            <p class="type-header">Back Image</p>
+            <div class="type-body">
+              <span class="icon">
+                <i class="las la-cloud-upload-alt"></i>
+              </span>
+              <button class="tw-font-semibold">Upload Media/Center</button>
+            </div>
+          </div>
+        </div>
+        <div class="type-sub-detail">
+          <div class="type-car">
+            Motorcycle Type:
+            <p class="car-info">Honda 3000</p>
+          </div>
+          <div class="type-car">
+            Plate Number:
+            <p class="car-info">TW3-F5T</p>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>

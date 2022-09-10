@@ -1,0 +1,48 @@
+button:disabled {
+  @apply tw-pointer-events-none tw-border-2 tw-bg-white tw-border-neutral-500 tw-text-neutral-500;
+  &.form-error {
+    @apply tw-border-red-400 tw-text-red-400;
+  }
+}
+
+.btn-icon {
+  @apply tw-py-1 tw-px-2;
+}
+
+.btn-underline {
+  @apply tw-text-primary;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  @apply tw-text-white tw-bg-primary;
+  width: 100%;
+}
+
+.btn-outline {
+  @apply tw-text-primary tw-bg-white tw-border tw-border-primary;
+}
+
+.btn-success {
+  @apply tw-border-2 tw-bg-green-500 tw-text-white tw-rounded-md tw-font-medium;
+  &:hover {
+    @apply tw-border-2 tw-border-green-500 tw-text-green-500 tw-bg-white;
+  }
+}
+
+.btn-outline-success {
+  @apply tw-border-2 tw-border-green-500 tw-text-primary tw-rounded-md tw-font-medium;
+  &:hover {
+    @apply tw-text-white tw-bg-green-500;
+  }
+}
+
+button[class^="btn"] {
+  @apply tw-rounded-md tw-py-2 tw-px-4 tw-transition-all tw-duration-300;
+}
+
+.btn-submit {
+  @apply tw-px-4 tw-py-2 tw-justify-self-end tw-rounded-md tw-text-white tw-bg-green-500 hover:tw-bg-green-600;
+}

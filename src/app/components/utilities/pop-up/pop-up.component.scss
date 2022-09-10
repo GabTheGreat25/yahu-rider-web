@@ -1,0 +1,58 @@
+:host {
+  display: grid;
+  position: fixed;
+  padding-top: 3rem;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.container {
+  border-radius: 0.25rem;
+  background-color: white;
+  .wrapper {
+    padding: 1rem;
+    .circle-icon {
+      font-size: 7.5rem;
+      text-align: center;
+      color: #ee4d2d;
+    }
+
+    .title {
+      @apply tw-text-3xl tw-font-semibold tw-text-center;
+      color: #ee4d2d;
+    }
+
+    .title-body {
+      @apply tw-text-primary-neutral-dark tw-font-semibold tw-text-xl;
+      padding: 1.5rem;
+      text-align: center;
+    }
+  }
+  .btn-container {
+    @apply tw-text-xl tw-font-semibold;
+    display: grid;
+    justify-content: center;
+    color: #ee4d2d;
+
+    .btn-close {
+      @apply tw-bg-white tw-text-primary;
+      border: 1px solid #ee4d2d;
+      border-radius: 0.5rem;
+      display: inline-block;
+      padding: 0.5rem 1.2rem;
+      text-align: center;
+      transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s, transform 0.1s;
+
+      &:hover {
+        @apply tw-bg-primary tw-text-white;
+        transform: scale(0.9);
+      }
+    }
+  }
+}

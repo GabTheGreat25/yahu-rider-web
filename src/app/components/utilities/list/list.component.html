@@ -1,0 +1,22 @@
+<card>
+  <card-wrapper card-wrapper>
+    <table class="card-body">
+      <thead>
+        <tr class="card-row">
+          <th class="card-header" *ngFor="let header of headers">
+            {{ header.text }}
+          </th>
+        </tr>
+      </thead>
+      <tbody class="tw-text-center">
+        <tr class="card-row" *ngFor="let row of rows" (click)="onDetail($event, row)">
+          <td class="card-item" *ngFor="let header of headers">
+            <list-item [header]="header" [row]="row" (edit)="onEdit(row)" (delete)="onDelete(row)" (button)="onButtonClick(row)">
+            </list-item>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </card-wrapper>
+  <pagination [pages]="paginations" (pageClick)="onPageClick($event)" pagination></pagination>
+</card>

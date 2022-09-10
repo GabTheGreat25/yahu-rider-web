@@ -1,0 +1,14 @@
+<div class="timeline" *ngFor="let timeline of timelines; let i = index">
+  <div class="timeline-date">{{ timeline.DateCreated | date: "MM/dd/yyyy, h:mm:ss a" }}</div>
+  <div class="timeline-vertical" *ngIf="timelines.length !== i + 1"></div>
+  <div *ngIf="timelines.length === i + 1"></div>
+  <div class="timeline-lollipop">
+    <div class="timeline-circle">
+      <i class="las la-check tw-text-3xl tw-text-primary"></i>
+    </div>
+  </div>
+  <div class="tracking-info">
+    <div class="timeline-status">{{ timeline.type }}</div>
+    <div class="timeline-comment">{{ timeline.comment }}</div>
+  </div>
+</div>

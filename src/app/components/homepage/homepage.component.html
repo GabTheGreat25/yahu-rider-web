@@ -1,0 +1,23 @@
+<div class="body">
+  <navbar [logo]="logo" [projectName]="projectName"></navbar>
+
+  <section [lazyBgImage]="background" [isBg]="true" class="wrapper">
+    <div class="content">
+      <div class="intro">
+        <div class="greeting">
+          <div>Be a part of our</div>
+          <div>growing community.</div>
+          <div class="tw-text-8xl tw-mt-2">Yahu!</div>
+          <button class="btn register" (click)="goto('register')">Register Now!</button>
+        </div>
+
+        <div class="description">
+          <div>Join together with us to power your own livelihood and more.</div>
+          <div>Let's begin on this adventure together.</div>
+        </div>
+      </div>
+
+      <img [src]="logo" class="image" alt="yahu logo" />
+    </div>
+  </section>
+</div>

@@ -1,0 +1,26 @@
+.section {
+  @apply tw-grid tw-items-center tw-p-8;
+  min-height: 100vh;
+
+  .content {
+    background-color: rgba(255, 255, 255, 0.5);
+    @apply tw-rounded-lg tw-shadow-lg tw-grid tw-items-center tw-gap-4 tw-p-8;
+
+    .promdiLogo {
+      @apply tw-flex tw-flex-col tw-justify-center tw-items-center;
+    }
+
+    .image {
+      @apply tw-mx-auto tw-h-96;
+    }
+
+    .link {
+      @apply tw-justify-self-center;
+    }
+
+    .btn {
+      @apply tw-border-secondary tw-text-white tw-px-3 tw-py-2 tw-rounded-lg tw-bg-secondary-dark tw-justify-self-center tw-border-solid tw-border-2;
+      @apply tw-duration-300 tw-content-evenly hover:tw-bg-white hover:tw-text-secondary;
+    }
+  }
+}

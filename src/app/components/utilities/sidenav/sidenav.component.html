@@ -1,0 +1,12 @@
+<div class="sidebar">
+  <ul>
+    <ng-container *ngFor="let tab of tabs">
+      <li class="tabs" [routerLink]="'/dashboard/' + tab.route" routerLinkActive="active">
+        <div class="tab-items tw-flex tw-items-center">
+          <i class="la-2x" [ngClass]="[tab.icon]"></i>
+          <span class="tw-pl-3">{{ tab.name }}</span>
+        </div>
+      </li>
+    </ng-container>
+  </ul>
+</div>

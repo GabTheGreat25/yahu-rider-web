@@ -1,0 +1,59 @@
+.tracking-page {
+  display: grid;
+  grid-template-rows: 5rem auto;
+  height: 100%;
+
+  .timeline {
+    @apply tw-px-52 tw-py-10;
+  }
+
+  .search {
+    @apply tw-px-20;
+
+    .tracking-wrapper {
+      @apply tw-grid tw-justify-center tw-grid-flow-col tw-pt-44 tw-gap-24;
+
+      .tracking-container {
+        @apply tw-pt-32;
+      }
+      .searchBox {
+        display: flex;
+        position: relative;
+
+        .icon-search {
+          @apply tw-text-primary;
+          position: absolute;
+          left: 2.5rem;
+          font-size: 2rem;
+        }
+
+        .mainInput {
+          width: 460px;
+          border-radius: 8px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          height: 50px;
+          padding: 0 58px;
+          font-size: 16px;
+          margin-left: 30px;
+        }
+
+        .trackButton {
+          @apply tw-text-xl tw-font-bold;
+          background-color: green;
+          height: 50px;
+          width: 7.5rem;
+          border-radius: 0 8px 8px 0;
+          padding: 0 5px;
+          color: #fff;
+          cursor: pointer;
+
+          &:disabled {
+            background-color: white;
+            color: gray;
+          }
+        }
+      }
+    }
+  }
+}

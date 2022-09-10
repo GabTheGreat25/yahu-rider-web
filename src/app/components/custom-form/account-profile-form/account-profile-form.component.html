@@ -1,0 +1,53 @@
+<div class="form-container" [formGroup]="form">
+  <validated-input [control]="accNum" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="accNum" placeholder="Account Number" (blur)="removeMessage()" />
+  </validated-input>
+
+  <div class="form-group-col">
+    <select name="title" class="form-control" formControlName="title">
+      <option value="">Prefix</option>
+      <option value="Mr.">Mr.</option>
+      <option value="Mrs.">Mrs.</option>
+    </select>
+
+    <validated-input [control]="firstName" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="firstName" placeholder="First Name" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="surname" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="surname" placeholder="Surname" (blur)="removeMessage()" />
+    </validated-input>
+  </div>
+
+  <div class="form-group-col">
+    <validated-input [control]="phoneNumber" [showErrorMessage]="showErrorMessage">
+      <input
+        form-control
+        type="text"
+        class="form-control"
+        formControlName="phoneNumber"
+        placeholder="Phone Number"
+        (blur)="removeMessage()"
+      />
+    </validated-input>
+
+    <validated-input [control]="mobileNumber" [showErrorMessage]="showErrorMessage">
+      <input
+        form-control
+        type="text"
+        class="form-control"
+        formControlName="mobileNumber"
+        placeholder="Mobile Number"
+        (blur)="removeMessage()"
+      />
+    </validated-input>
+  </div>
+
+  <validated-input [control]="email" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="email" placeholder="Email Address" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="company" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="company" placeholder="Company" (blur)="removeMessage()" />
+  </validated-input>
+</div>

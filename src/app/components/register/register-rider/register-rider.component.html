@@ -1,0 +1,261 @@
+<pop-up *ngIf="isOpen"></pop-up>
+<section [lazyBgImage]="background" [isBg]="true">
+  <div class="white-box">
+    <div class="register-header">
+      <h1 class="head">Register</h1>
+      <p class="header-info">
+        Become a part of Yahu's ever-expanding community! riders. <span> As a new motorcycle rider, fill out the registration form. </span>
+      </p>
+    </div>
+    <form [formGroup]="form" enctype="multipart/form-data" class="form-container">
+      <div class="tw-grid tw-grid-cols-3 tw-justify-items-center tw-pt-6 tw-pl-5">
+        <div class="body-info">
+          <label class="body-label">First Name</label>
+          <validated-input [control]="firstName" [showErrorMessage]="showErrorMessage">
+            <input
+              form-control
+              type="text"
+              class="register-form-control"
+              formControlName="firstName"
+              placeholder="First Name"
+              (blur)="removeMessage()"
+            />
+          </validated-input>
+        </div>
+        <div class="body-info">
+          <label class="body-label">Last Name</label>
+          <validated-input [control]="lastName" [showErrorMessage]="showErrorMessage">
+            <input
+              form-control
+              type="text"
+              class="register-form-control"
+              formControlName="lastName"
+              placeholder="Last Name"
+              (blur)="removeMessage()"
+            />
+          </validated-input>
+        </div>
+        <div class="body-info">
+          <label class="body-label">Birth Date</label>
+          <validated-input [control]="birthDate" [showErrorMessage]="showErrorMessage">
+            <input
+              form-control
+              type="date"
+              class="register-form-control"
+              formControlName="birthDate"
+              placeholder="Birth Date"
+              (blur)="removeMessage()"
+            />
+          </validated-input>
+        </div>
+      </div>
+
+      <div class="register-body">
+        <div>
+          <div class="body-info">
+            <label class="body-label">Email Address</label>
+            <validated-input [control]="email" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="email"
+                placeholder="Email Address"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="license">
+            <label class="body-label">License Number</label>
+            <validated-input [control]="licenseNumber" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="number"
+                placeholder="License Number"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="license">
+            <label class="body-label">License Class</label>
+            <validated-input [control]="licenseClass" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="class"
+                placeholder="License Class"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="license">
+            <label class="body-label">License Front Image</label>
+            <validated-input [control]="licenseFront" [showErrorMessage]="showErrorMessage">
+              <input form-control type="file" formControlName="front" (blur)="removeMessage()" (change)="onFront($event)" />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="vehicle">
+            <label class="body-label">Type</label>
+            <validated-input [control]="type" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="type"
+                placeholder="Type of Vehicle"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="vehicle">
+            <label class="body-label">Color</label>
+            <validated-input [control]="color" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="color"
+                placeholder="Color of your Vehicle"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="or">
+            <label class="body-label">OR Image</label>
+            <validated-input [control]="ORimage" [showErrorMessage]="showErrorMessage">
+              <input form-control type="file" formControlName="image" (blur)="removeMessage()" (change)="onOR($event)" />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="or">
+            <label class="body-label">OR Number</label>
+            <validated-input [control]="ORnumber" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="number"
+                placeholder="OR Number"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+        </div>
+
+        <div>
+          <div class="body-info">
+            <label class="body-label">Address</label>
+            <validated-input [control]="address" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="address"
+                placeholder="License Number"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info">
+            <label class="body-label">Phone Number</label>
+            <validated-input [control]="phoneNumber" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="phoneNumber"
+                placeholder="Phone Number"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="license">
+            <label class="body-label">License Issue Date</label>
+            <validated-input [control]="licenseIssue" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="date"
+                class="register-form-control"
+                formControlName="issuedDate"
+                placeholder="License Issue Date"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="license">
+            <label class="body-label">License Back Image</label>
+            <validated-input [control]="licenseBack" [showErrorMessage]="showErrorMessage">
+              <input form-control type="file" formControlName="back" (blur)="removeMessage()" (change)="onBack($event)" />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="vehicle">
+            <label class="body-label">Model</label>
+            <validated-input [control]="model" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="model"
+                placeholder="Vehicle Model"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="vehicle">
+            <label class="body-label">Plate Number</label>
+            <validated-input [control]="plateNumber" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="number"
+                placeholder="Plate Number"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="cr">
+            <label class="body-label">CR Image</label>
+            <validated-input [control]="CRimage" [showErrorMessage]="showErrorMessage">
+              <input form-control type="file" formControlName="image" (blur)="removeMessage()" (change)="onCR($event)" />
+            </validated-input>
+          </div>
+
+          <div class="body-info" formGroupName="cr">
+            <label class="body-label">CR Number</label>
+            <validated-input [control]="CRnumber" [showErrorMessage]="showErrorMessage">
+              <input
+                form-control
+                type="text"
+                class="register-form-control"
+                formControlName="number"
+                placeholder="CR Number"
+                (blur)="removeMessage()"
+              />
+            </validated-input>
+          </div>
+        </div>
+      </div>
+
+      <span class="tw-text-red-400" *ngIf="form.errors">{{ form.errors["text"] }}</span>
+      <div class="tw-grid tw-place-content-center tw-pt-6">
+        <button class="btn-submit" (click)="registerRider(form)" [disabled]="form.invalid">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>

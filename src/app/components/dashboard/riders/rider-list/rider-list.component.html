@@ -1,0 +1,12 @@
+<breadcrumb route="Rider" [statusList]="statusList" (statusChange)="optionChange($event)"></breadcrumb>
+
+<app-list
+  [headers]="headers"
+  [paginations]="paginations"
+  [rows]="rows"
+  (edit)="onEdit($event)"
+  [pageWidth]="3"
+  (pageClick)="onPageClick($event)"
+  (detail)="onDetail($event)"
+>
+</app-list>

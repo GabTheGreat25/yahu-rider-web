@@ -1,0 +1,21 @@
+.container {
+  @apply tw-not-italic;
+
+  .header {
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+
+    .map {
+      font-size: 2rem;
+    }
+
+    .title {
+      @apply tw-font-medium tw-text-primary-neutral-dark;
+      font-size: 1.25rem;
+      padding-top: 0.5rem;
+    }
+  }
+  .description {
+    @apply tw-px-2 tw-text-sm tw-font-normal tw-text-primary-neutral-dark;
+  }
+}

@@ -1,0 +1,206 @@
+.container {
+  position: relative;
+  height: 100%;
+
+  .order {
+    height: 100%;
+    color: #757575;
+    display: grid;
+    grid-template-columns: 0.6fr 1fr;
+
+    @screen lg {
+      grid-template-columns: 0.5fr 1fr;
+    }
+
+    @screen xl {
+      grid-template-columns: 0.4fr 1fr;
+    }
+
+    .sidenav {
+      display: grid;
+      height: 100%;
+      grid-template-rows: 10rem 12rem auto 5rem;
+
+      .sidenav__header {
+        display: grid;
+        grid-template-columns: 0.75fr 1fr;
+        justify-items: center;
+        background-color: #ff773333;
+        height: fit-content;
+
+        .image {
+          padding: 1.1rem;
+
+          &.rider {
+            width: 9rem;
+            min-height: 9rem !important;
+
+            @screen xl {
+              width: 10rem;
+              min-height: 10rem !important;
+            }
+          }
+
+          &.logo {
+            width: 7rem;
+            min-height: 9rem !important;
+
+            @screen xl {
+              margin-left: 5rem;
+              width: 8rem;
+              min-height: 10rem !important;
+            }
+          }
+        }
+      }
+
+      .route {
+        padding: 1.1rem 2rem;
+
+        .route__title {
+          @apply tw-font-semibold tw-text-primary-neutral-dark tw-text-lg;
+          padding-bottom: 1rem;
+        }
+
+        .route__form {
+          display: grid;
+          grid-template-columns: 3rem 10fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 2rem;
+          padding: 1rem 0;
+
+          .side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            grid-row: 1 / span 2;
+
+            i {
+              &.active {
+                color: #ff7733 !important;
+              }
+
+              &.drop {
+                color: #fbc472;
+              }
+            }
+
+            .middle {
+              margin: 0.6rem 0;
+
+              .circle {
+                background: #c4c4c4;
+                height: 0.3rem;
+                width: 0.3rem;
+                border-radius: 100%;
+                margin: 0.3rem 0;
+              }
+            }
+          }
+
+          .field {
+            position: relative;
+            width: 100%;
+
+            input {
+              outline: 0;
+              border-width: 0 0 2px;
+              box-shadow: 0 0 0 0 #e2ecf980;
+            }
+
+            .popup {
+              position: absolute;
+              display: flex;
+              flex-direction: column;
+              width: 80%;
+              padding: 1rem;
+              z-index: 999;
+              right: 0;
+              bottom: -6.4rem;
+              left: 27rem;
+
+              &::after {
+                content: " ";
+                position: absolute;
+                left: -2.4rem;
+                bottom: 6.5rem;
+                border-left: 1.2rem solid transparent;
+                border-top: 1.2rem solid transparent;
+                border-right: 1.2rem solid rgb(248, 248, 248);
+                border-bottom: 1.2rem solid transparent;
+              }
+
+              .title {
+                @apply tw-text-primary tw-font-normal;
+              }
+
+              p {
+                @apply tw-font-medium;
+              }
+
+              input {
+                border: 1px solid rgb(248, 248, 248);
+                padding: 0.3rem;
+              }
+
+              background-color: rgb(248, 248, 248);
+            }
+          }
+        }
+      }
+
+      #delivery-card {
+        padding: 1.15rem 2rem;
+
+        .delivery {
+          padding: 0.25rem 2rem;
+
+          .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .title-info {
+              @apply tw-font-bold tw-text-primary-neutral-dark;
+              font-size: 1.5rem;
+            }
+          }
+
+          .pick-up {
+            display: grid;
+            grid-template-columns: 2.25rem 1fr;
+
+            .map-container {
+              font-size: 2rem;
+              color: #fbc472;
+            }
+
+            .pick-up-title {
+              @apply tw-font-medium tw-text-primary-neutral-dark;
+              font-size: 1rem;
+              padding-top: 0.5rem;
+            }
+          }
+
+          .pick-up-address {
+            @apply tw-px-2 tw-text-sm tw-font-medium tw-text-primary-neutral-dark;
+          }
+        }
+      }
+    }
+
+    .deliver {
+      padding: 0rem 1rem;
+      align-self: center;
+      width: 100%;
+      display: grid;
+      justify-items: center;
+    }
+
+    .btn-save {
+      background-color: #ff7733;
+      color: white;
+      margin-top: 1rem;
+    }
+  }
+}

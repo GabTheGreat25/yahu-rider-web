@@ -1,0 +1,211 @@
+.rider-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12rem;
+  padding: 0 10rem;
+  .rider-detail {
+    display: grid;
+    @apply tw-grid-flow-row;
+    place-content: center;
+    background: #e7e9ef;
+    border-radius: 1rem;
+    width: 35rem;
+    .rider-title {
+      @apply tw-text-3xl tw-font-semibold;
+      color: #ee4d2d;
+      padding-bottom: 1rem;
+      text-align: center;
+    }
+    .image-container {
+      display: grid;
+      place-content: center;
+      #rider-img {
+        padding-top: 2rem;
+        width: 30rem;
+        padding-bottom: 1rem;
+      }
+    }
+    .rider-login {
+      @apply tw-grid tw-grid-flow-col;
+      .rider-status {
+        @apply tw-text-2xl tw-font-bold tw-text-white;
+        color: #009f5a;
+        // padding-left: 1.5rem;
+        width: 8rem;
+      }
+      .current-status {
+        @apply tw-text-center tw-text-primary-neutral-dark tw-py-1 tw-font-semibold;
+      }
+
+      .rider-time {
+        @apply tw-text-2xl tw-font-semibold;
+        color: #ee4d2d;
+        padding-bottom: 1rem;
+        text-align: center;
+      }
+    }
+    .rider-card {
+      @apply tw-grid tw-grid-flow-col;
+      justify-content: center;
+      .card-info {
+        @apply tw-text-xl tw-font-semibold;
+        padding: 0.15rem 0;
+        color: black;
+      }
+    }
+    .card-address {
+      @apply tw-text-sm tw-text-primary-neutral-dark tw-font-semibold;
+      padding: 1rem 0;
+      width: 30rem;
+      font-size: 1.2rem;
+      line-height: 1.65rem;
+      .address-title {
+        @apply tw-font-bold;
+        color: #ee4d2d;
+      }
+    }
+  }
+
+  .sub-container {
+    display: grid;
+    padding-top: 2rem;
+    grid-template-columns: 2fr 1fr;
+    row-gap: 1rem;
+
+    .sub-header {
+      @apply tw-font-bold;
+      color: #ee4d2d;
+    }
+    .header-info {
+      @apply tw-text-primary-neutral-dark tw-font-semibold;
+      font-size: 1.2rem;
+    }
+  }
+
+  .sub-detail {
+    display: grid;
+    @apply tw-grid-flow-row;
+    .card-license {
+      @apply tw-text-sm tw-font-medium tw-text-primary-neutral-dark;
+      background: #e7e9ef;
+      width: 30rem;
+      height: 30rem;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+
+      .license-title {
+        @apply tw-font-semibold;
+        color: #ee4d2d;
+        font-size: 1.15rem;
+        padding-bottom: 0.25rem;
+      }
+
+      .license-info {
+        @apply tw-grid tw-grid-flow-row;
+        row-gap: 1rem;
+
+        .license-img {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          .img-header {
+            @apply tw-pb-1 tw-text-primary-neutral-dark tw-font-normal;
+          }
+          .img-body {
+            text-align: center;
+            font-size: 1rem;
+            background-color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 0.45rem;
+            color: blue;
+          }
+        }
+      }
+
+      .license-number {
+        @apply tw-pt-5 tw-pl-2;
+
+        .number-info {
+          @apply tw-font-normal;
+          padding: 0.4rem 0;
+          color: #ee4d2d;
+          font-size: 1.5rem;
+
+          .sub-info {
+            @apply tw-text-primary-neutral-dark;
+          }
+        }
+      }
+    }
+    .card-type {
+      @apply tw-text-sm tw-font-medium tw-text-primary-neutral-dark;
+      background: #e7e9ef;
+      width: 30rem;
+      height: 30rem;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+
+      .type-title {
+        @apply tw-font-semibold;
+        color: #ee4d2d;
+        font-size: 1.15rem;
+        padding-bottom: 0.25rem;
+        padding-top: 2rem;
+      }
+
+      .type-info {
+        @apply tw-grid tw-grid-flow-row;
+        gap: 2rem;
+        .type-header {
+          @apply tw-pb-1 tw-text-primary-neutral-dark tw-font-normal;
+        }
+        .type-body {
+          text-align: center;
+          font-size: 0.7rem;
+          background-color: white;
+          padding: 0.25rem 1rem;
+          border-radius: 0.45rem;
+          min-height: 40%;
+          color: blue;
+        }
+      }
+
+      .type-sub-detail {
+        @apply tw-grid tw-grid-flow-row;
+        @apply tw-pt-4 tw-pl-2;
+
+        .type-car {
+          color: #ee4d2d;
+          text-align: center;
+        }
+
+        .car-info {
+          @apply tw-text-primary-neutral-dark;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .icon {
+    @apply tw-text-primary-neutral;
+    display: grid;
+    justify-content: center;
+    font-size: 3.5rem;
+    cursor: pointer;
+  }
+
+  .btn-submit {
+    @apply tw-text-xl tw-font-semibold;
+    color: orangered;
+    background-color: white;
+    border: 2px solid orangered;
+    padding: 0.65rem 2.5rem;
+    transition-duration: 0.4s;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: orangered;
+      color: white;
+    }
+  }
+}

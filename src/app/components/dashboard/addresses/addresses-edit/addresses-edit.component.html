@@ -1,0 +1,68 @@
+<card>
+  <form class="form-container tw-w-2/4 tw-mx-auto" card-wrapper [formGroup]="form" (submit)="updateAddress(form)">
+    <h1 class="form-title">Add Address</h1>
+
+    <label>Accounts</label>
+    <select class="form-control" formControlName="account">
+      <option [value]="account._id" *ngFor="let account of accounts">{{ account.accNum }}</option>
+    </select>
+
+    <input type="text" placeholder="Company" class="form-control" formControlName="company" />
+    <ng-container *ngIf="companyInvalid">
+      <app-validation-message validator="required" *ngIf="company?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="House" class="form-control" formControlName="house" />
+    <ng-container *ngIf="houseInvalid">
+      <app-validation-message validator="required" *ngIf="house?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Building" class="form-control" formControlName="building" />
+    <ng-container *ngIf="buildingInvalid">
+      <app-validation-message validator="required" *ngIf="building?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Number" class="form-control" formControlName="number" />
+    <ng-container *ngIf="numberInvalid">
+      <app-validation-message validator="required" *ngIf="number?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Street" class="form-control" formControlName="street" />
+    <ng-container *ngIf="streetInvalid">
+      <app-validation-message validator="required" *ngIf="street?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="City" class="form-control" formControlName="city" />
+    <ng-container *ngIf="cityInvalid">
+      <app-validation-message validator="required" *ngIf="city?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Barangay" class="form-control" formControlName="barangay" />
+    <ng-container *ngIf="barangayInvalid">
+      <app-validation-message validator="required" *ngIf="barangay?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Municipality" class="form-control" formControlName="municipality" />
+    <ng-container *ngIf="municipalityInvalid">
+      <app-validation-message validator="required" *ngIf="municipality?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Barangay" class="form-control" formControlName="barangay" />
+    <ng-container *ngIf="barangayInvalid">
+      <app-validation-message validator="required" *ngIf="barangay?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Province" class="form-control" formControlName="province" />
+    <ng-container *ngIf="provinceInvalid">
+      <app-validation-message validator="required" *ngIf="province?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <input type="text" placeholder="Postal Code" class="form-control" formControlName="postalCode" />
+    <ng-container *ngIf="postalCodeInvalid">
+      <app-validation-message validator="required" *ngIf="postalCode?.errors?.['required']"></app-validation-message>
+    </ng-container>
+
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Update Address</button>
+  </form>
+</card>

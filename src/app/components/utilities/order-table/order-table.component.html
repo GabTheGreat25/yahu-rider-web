@@ -1,0 +1,39 @@
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th *ngFor="let header of headers">{{ header }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{ order.id }}</td>
+      <td class="status">{{ order.status }}</td>
+      <td class="date">
+        <p>{{ order.delivery.date }}</p>
+        <p>{{ order.delivery.time }}</p>
+      </td>
+      <td class="routes">
+        <div class="points">
+          <icon icon="las la-map-marker"></icon>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <icon icon="las la-map-marker"></icon>
+        </div>
+
+        <div class="route">
+          <p>{{ order.routes.pickUp }}</p>
+          <p>{{ order.routes.dropOff }}</p>
+        </div>
+      </td>
+      <td class="driver">
+        <p>{{ order.driver.firstName }} {{ order.driver.lastName }}</p>
+        <p class="number">
+          {{ order.driver.number }}
+        </p>
+      </td>
+      <td>{{ order.delivery.type }}</td>
+      <td>{{ order.type }}</td>
+      <td class="price">₱{{ order.price }}</td>
+    </tr>
+  </tbody>
+</table>

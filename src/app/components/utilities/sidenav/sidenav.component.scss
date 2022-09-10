@@ -1,0 +1,30 @@
+.sidebar {
+  @apply tw-bg-white tw-text-primary-neutral-dark tw-pt-10;
+  height: 100%;
+  position: fixed;
+
+  .tabs {
+    padding: 0.5rem 1rem;
+    display: block;
+    cursor: pointer;
+
+    .tab-items {
+      padding: 0.5rem 5rem 0.5rem 1rem;
+      border-radius: 0.35rem;
+      @apply tw-font-semibold;
+    }
+
+    &:hover {
+      .tab-items {
+        @apply tw-text-neutral-300;
+        @apply tw-text-white tw-bg-primary tw-font-bold;
+      }
+    }
+
+    &.active {
+      .tab-items {
+        @apply tw-text-white tw-bg-primary tw-font-bold;
+      }
+    }
+  }
+}

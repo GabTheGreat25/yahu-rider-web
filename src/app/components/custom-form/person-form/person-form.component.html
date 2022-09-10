@@ -1,0 +1,24 @@
+<div class="form-container" [formGroup]="form">
+  <validated-input [control]="firstName" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="firstName" placeholder="First Name" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="lastName" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="lastName" placeholder="last Name" (blur)="removeMessage()" />
+  </validated-input>
+
+  <validated-input [control]="phoneNumber" [showErrorMessage]="showErrorMessage">
+    <input
+      form-control
+      type="text"
+      class="form-control"
+      formControlName="phoneNumber"
+      placeholder="Mobile Number"
+      (blur)="removeMessage()"
+    />
+  </validated-input>
+
+  <validated-input [control]="email" [showErrorMessage]="showErrorMessage">
+    <input form-control type="text" class="form-control" formControlName="email" placeholder="Email Address" (blur)="removeMessage()" />
+  </validated-input>
+</div>

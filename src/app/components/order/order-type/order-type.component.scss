@@ -1,0 +1,425 @@
+.order-type {
+  @apply tw-grid tw-grid-flow-row;
+  padding: 1rem;
+  gap: 1rem;
+  width: fit-content;
+  height: 100%;
+  grid-template-columns: repeat(2, 1fr);
+
+  @screen xl {
+    grid-template-columns: 1fr 1.5fr;
+    width: 100%;
+  }
+
+  .order-information {
+    display: grid;
+    grid-template-rows: minmax(12rem, min-content) 9rem 0.1rem repeat(auto-fill, 8rem);
+    gap: 1rem;
+    overflow-y: auto;
+    max-height: calc(100vh - 7rem);
+    padding: 0 1rem;
+
+    &:hover {
+      &::-webkit-scrollbar-thumb {
+        background: rgb(133, 133, 133);
+        border-radius: 3px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(233, 233, 233);
+      border-radius: 3px;
+      max-height: 10px;
+
+      &:hover {
+        background: rgb(133, 133, 133);
+      }
+    }
+
+    .type-container {
+      height: 12rem;
+      max-height: 15rem;
+
+      .type {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0 1rem;
+
+        label {
+          margin-top: 1rem;
+          font-size: smaller;
+          font-weight: 500;
+        }
+
+        .type-detail {
+          @apply tw-grid tw-grid-flow-col;
+
+          .delivery-logo {
+            @apply tw-grid;
+            grid-template-columns: 2.5rem 1fr;
+          }
+
+          .logo {
+            width: 1.75rem;
+          }
+
+          .type-title {
+            @apply tw-font-semibold;
+            font-size: 1.1rem;
+          }
+
+          .type-btn {
+            @apply tw-grid tw-justify-end;
+            color: #ff7733;
+            font-weight: 500;
+          }
+        }
+
+        .buttons {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 7rem);
+          justify-content: center;
+          column-gap: 1rem;
+
+          .btn-primary {
+            width: 7rem;
+            max-width: 7rem;
+            height: fit-content;
+            border: 2.5px solid #ff7733;
+            text-align: center;
+            font-size: 1rem;
+          }
+        }
+
+        .type-label {
+          @apply tw-pb-1;
+        }
+
+        .type-info {
+          @apply tw-grid-flow-col;
+          display: grid;
+          gap: 1.5rem;
+
+          .type-form-control {
+            width: 100%;
+            padding: 0 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            height: 2rem;
+
+            &.ng-invalid.ng-touched {
+              @apply tw-ring-2 tw-ring-opacity-70 tw-ring-red-500;
+            }
+
+            &.ng-valid.ng-touched {
+              @apply tw-ring-2 tw-ring-opacity-70 tw-ring-green-500;
+            }
+          }
+        }
+      }
+    }
+
+    .item-info-container {
+      max-height: 9rem !important;
+
+      .item-info {
+        padding: 0 1rem;
+
+        .info-detail {
+          @apply tw-grid tw-grid-flow-col tw-pb-4;
+
+          .delivery-logo {
+            @apply tw-grid;
+            grid-template-columns: 2.5rem 1fr;
+          }
+
+          .logo {
+            width: 1.75rem;
+          }
+
+          .info-title {
+            @apply tw-font-semibold;
+            font-size: 1.1rem;
+          }
+
+          .info-btn {
+            @apply tw-grid tw-justify-end;
+            color: #ff7733;
+            font-weight: 500;
+          }
+        }
+
+        .sub-info {
+          @apply tw-grid-flow-row;
+          display: grid;
+          grid-template-columns: auto 5rem;
+          gap: 1.5rem;
+
+          label {
+            font-size: smaller;
+            font-weight: 500;
+          }
+
+          .info-form-control {
+            outline: none;
+            overflow: visible;
+            width: 100%;
+            text-align: left;
+            box-shadow: none;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            height: 2rem;
+            padding-bottom: 0.15rem;
+            padding-left: 0.75rem;
+            font-size: small;
+
+            &.weight {
+              text-align: center;
+              padding-left: 0;
+            }
+
+            &.ng-invalid.ng-touched {
+              @apply tw-ring-2 tw-ring-opacity-70 tw-ring-red-500;
+              border-radius: 0.25rem;
+            }
+
+            &.ng-valid.ng-touched {
+              @apply tw-ring-2 tw-ring-opacity-70 tw-ring-green-500;
+              border-radius: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .item-container {
+      max-height: 8rem;
+
+      .item {
+        padding: 0.25rem 1rem;
+
+        .item-detail {
+          @apply tw-grid tw-grid-flow-col tw-pb-2;
+          grid-template-columns: auto 2rem;
+
+          .number-circle {
+            @apply tw-grid;
+            gap: 0.2rem;
+            grid-template-columns: 2rem auto;
+
+            i {
+              font-size: 2rem;
+              color: #ff7733;
+            }
+          }
+
+          .circle {
+            @apply tw-font-semibold;
+            border-radius: 50%;
+            background-color: #ff7733;
+            text-align: center;
+            font-size: 1.2rem;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+          }
+
+          .item-title {
+            @apply tw-font-semibold;
+            font-size: 1.1rem;
+            align-self: center;
+          }
+
+          .minus-btn {
+            @apply tw-grid tw-justify-end;
+            justify-self: center;
+            align-self: center;
+            cursor: pointer;
+            color: red;
+            font-size: 1.5rem;
+            width: fit-content;
+            height: fit-content;
+
+            &:hover {
+              background-color: #eee;
+            }
+          }
+        }
+
+        .sub-item-container {
+          @apply tw-grid-flow-row;
+          display: grid;
+          grid-template-columns: 3fr 1fr;
+
+          .sub-item {
+            label {
+              font-size: smaller;
+              font-weight: 500;
+            }
+
+            .sub-item-value {
+              margin-left: 1rem;
+              font-size: small;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .order-summary {
+    height: fit-content;
+    width: 100%;
+
+    .delivery-container {
+      @apply tw-px-6;
+      .delivery-info {
+        @apply tw-grid-flow-row;
+        gap: 0.4rem;
+        display: grid;
+
+        .delivery-logo {
+          display: grid;
+          grid-template-columns: 3rem 1fr;
+
+          .delivery-title {
+            @apply tw-font-semibold;
+            font-size: 1.5rem;
+            align-self: center;
+          }
+        }
+
+        .title-info {
+          @apply tw-font-bold tw-text-primary-neutral-dark;
+          font-size: 1.5rem;
+        }
+
+        .pick-up {
+          display: grid;
+          grid-template-columns: 2.25rem 1fr;
+
+          .map-container {
+            font-size: 2rem;
+            color: #fbc472;
+          }
+
+          .pick-up-title {
+            @apply tw-font-medium tw-text-primary-neutral-dark;
+            font-size: medium;
+            font-weight: 700;
+            align-self: center;
+          }
+        }
+
+        .pick-up-address {
+          @apply tw-px-2 tw-font-medium tw-text-primary-neutral-dark tw-ml-6;
+          font-size: smaller;
+        }
+
+        #drop {
+          color: #ff7733;
+        }
+      }
+    }
+
+    .horizontal-line {
+      height: 0.15rem;
+      background-color: #ccc;
+      margin: 1rem 0 0.5rem 0;
+    }
+
+    .payment-type {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+
+      .payment-container {
+        font-size: 2rem;
+        color: #ff7733;
+      }
+
+      .payment-title {
+        @apply tw-font-semibold;
+        font-size: 1.2rem;
+        padding-top: 0.9rem;
+      }
+    }
+
+    .payment-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+
+      .radio-container {
+        padding-bottom: 0.5rem;
+
+        .radio-label {
+          @apply tw-font-semibold;
+          padding-left: 1rem;
+        }
+      }
+    }
+
+    .payment-title {
+      @apply tw-font-semibold tw-text-sm tw-pb-1;
+    }
+
+    .dropdown {
+      outline: none;
+      width: 100%;
+      padding: 0 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      height: 2rem;
+      display: grid;
+    }
+
+    .fee {
+      padding-top: 0.75rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .delivery-fee {
+        @apply tw-font-bold tw-text-primary-neutral-dark tw-text-xl;
+      }
+
+      .total-cost {
+        @apply tw-font-bold tw-text-xl;
+        color: #28b411;
+        display: grid;
+        justify-content: end;
+      }
+    }
+
+    .btn-container {
+      @apply tw-grid tw-place-content-center tw-pt-7;
+
+      .btn-deliver {
+        @apply tw-font-semibold;
+        color: white;
+        background-color: #ff8e01;
+        padding: 0.65rem 3rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+.card-title-container {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+
+  .card-title {
+    @apply tw-font-semibold;
+    font-size: 1.5rem;
+    align-self: center;
+  }
+
+  .logo {
+    align-self: center;
+  }
+}

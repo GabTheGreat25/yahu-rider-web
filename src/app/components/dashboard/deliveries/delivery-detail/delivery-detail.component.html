@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="delivery">
+    <div class="header">
+      <p>Delivery Information</p>
+    </div>
+    <div class="card">
+      <div class="details">
+        <h1>
+          Status: <span>{{ delivery.status }}</span>
+        </h1>
+        <h1>
+          Parcels: <span>{{ delivery.parcels.length }}</span>
+        </h1>
+      </div>
+      <div class="card" *ngFor="let parcel of delivery.parcels">
+        <div class="details">
+          <p>
+            Parcel ID: <span>{{ parcel.refNum }}</span>
+          </p>
+          <p>
+            Pickup Location: <span>{{ parcel.pickupAddress.address.fullAddress }}</span>
+          </p>
+          <p>
+            Shipping Location: <span>{{ parcel.shippingAddress.address.fullAddress }}</span>
+          </p>
+          <p>
+            Status: <span>{{ parcel.status }}</span>
+          </p>
+          <p>
+            Weight: <span>{{ parcel.weight }}</span>
+          </p>
+        </div>
+        <div class="view">
+          <button (click)="onDetail(parcel._id)">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

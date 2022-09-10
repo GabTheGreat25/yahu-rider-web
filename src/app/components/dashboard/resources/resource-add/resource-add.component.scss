@@ -1,0 +1,44 @@
+.resource-card {
+  background-color: rgba(255, 255, 255);
+  padding: 1rem 0.5rem 1.5rem 0.5rem;
+  border: none;
+  box-shadow: 0 2px 18px 1px rgb(49 53 72 / 10%);
+  border-radius: 0.45rem;
+  height: fit-content;
+  width: 100%;
+  margin: auto;
+
+  .resource-container {
+    @apply tw-grid tw-grid-flow-row tw-py-3 tw-px-20;
+    height: fit-content;
+
+    .resource-title {
+      @apply tw-font-medium;
+      font-size: 1.5rem;
+    }
+
+    .resource-sub-title {
+      font-size: 1rem;
+    }
+
+    .control-title {
+      @apply tw-py-3;
+    }
+
+    .resource-control {
+      width: 100%;
+      padding: 1rem 1rem;
+      border: 2px solid #ccc;
+      border-radius: 0.25rem;
+      height: 2.5rem;
+
+      &.ng-invalid.ng-touched {
+        @apply tw-ring-2 tw-ring-opacity-70 tw-ring-red-500;
+      }
+
+      &.ng-valid.ng-touched {
+        @apply tw-ring-2 tw-ring-opacity-70 tw-ring-green-500;
+      }
+    }
+  }
+}

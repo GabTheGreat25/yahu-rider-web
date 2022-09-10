@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="history">
+    <div class="head">
+      <h1>Order History</h1>
+
+      <div class="filter">
+        <br />
+        <select class="status">
+          <option>Status: All</option>
+          <hr />
+          <option>Ongoing</option>
+          <hr />
+          <option>Complete</option>
+          <hr />
+          <option>Cancelled</option>
+          <hr />
+          <option>Reset</option>
+        </select>
+
+        <input type="date" class="date" [value]="todayDate" />
+
+        <div class="pagination">
+          <button class="arrow"><</button>
+          <button class="number">1</button>
+          <button class="number select">2</button>
+          <button class="arrow">></button>
+        </div>
+      </div>
+    </div>
+
+    <order-table [orders]="orders"></order-table>
+  </div>
+</div>

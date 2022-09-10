@@ -1,0 +1,67 @@
+<card>
+  <form class="form-container tw-w-2/4 tw-mx-auto" card-wrapper [formGroup]="form" (submit)="addAddress(form)">
+    <h1 class="form-title">Add Address</h1>
+
+    <label>Accounts</label>
+    <select class="form-control" formControlName="account">
+      <option [value]="account._id" *ngFor="let account of accounts">{{ account.accNum }}</option>
+    </select>
+
+    <validated-input [control]="company" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="company" placeholder="Company" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="house" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="house" placeholder="House" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="building" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="building" placeholder="Building" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="number" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="number" placeholder="Number" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="street" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="street" placeholder="Street" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="city" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="city" placeholder="City" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="barangay" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="barangay" placeholder="Barangay" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="municipality" [showErrorMessage]="showErrorMessage">
+      <input
+        form-control
+        type="text"
+        class="form-control"
+        formControlName="municipality"
+        placeholder="Municipality"
+        (blur)="removeMessage()"
+      />
+    </validated-input>
+
+    <validated-input [control]="province" [showErrorMessage]="showErrorMessage">
+      <input form-control type="text" class="form-control" formControlName="province" placeholder="Province" (blur)="removeMessage()" />
+    </validated-input>
+
+    <validated-input [control]="postalCode" [showErrorMessage]="showErrorMessage">
+      <input
+        form-control
+        type="text"
+        class="form-control"
+        formControlName="postalCode"
+        placeholder="Postal Code"
+        (blur)="removeMessage()"
+      />
+    </validated-input>
+
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Add Address</button>
+  </form>
+</card>

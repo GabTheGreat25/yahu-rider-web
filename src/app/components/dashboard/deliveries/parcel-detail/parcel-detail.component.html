@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="delivery">
+    <div class="header">
+      <p>Parcel Item Information</p>
+    </div>
+    <div class="card">
+      <div class="details">
+        <h1>
+          Parcel Status: <span>{{ parcel.status }}</span>
+        </h1>
+        <h1>
+          Ref. Num: <span>{{ parcel.refNum }}</span>
+        </h1>
+
+        <div class="view">
+          <button (click)="track(parcel.refNum)">See Tracking</button>
+        </div>
+        <h1>Items</h1>
+      </div>
+      <div class="card" *ngFor="let item of parcel.items">
+        <div class="details">
+          <p>
+            Code: <span>{{ item.code }}</span>
+          </p>
+          <p>
+            Description: <span>{{ item.description }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

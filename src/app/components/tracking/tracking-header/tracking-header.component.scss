@@ -1,0 +1,53 @@
+.tracking-header {
+  @apply tw-grid tw-p-5;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  .tracking {
+    .tracking-label {
+      @apply tw-text-dark;
+
+      @screen xl {
+        @apply tw-font-bold;
+      }
+    }
+    .tracking-value {
+      @apply tw-text-primary tw-text-4xl;
+
+      @screen xl {
+        @apply tw-text-6xl;
+      }
+    }
+  }
+
+  .status {
+    @apply tw-grid tw-justify-end;
+  }
+}
+
+.tracking-location {
+  @apply tw-grid tw-p-5;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  @screen xl {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .location-column {
+    @apply tw-p-2;
+
+    .location-header {
+      @apply tw-flex tw-flex-row tw-gap-1;
+
+      h1 {
+        @apply tw-text-dark tw-font-medium;
+      }
+      p {
+        color: #8d9dae;
+      }
+    }
+  }
+}

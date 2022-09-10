@@ -1,0 +1,28 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+
+  .title {
+    @apply tw-text-primary tw-font-normal;
+  }
+
+  p {
+    @apply tw-font-medium;
+  }
+
+  input {
+    border: 1px solid #e8e8e8;
+    padding: 0.3rem;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    gap: 1rem;
+    [class^="btn"] {
+      width: 40%;
+    }
+  }
+}

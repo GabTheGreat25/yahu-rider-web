@@ -1,0 +1,53 @@
+<card>
+  <form class="form-container tw-w-4/5 tw-mx-auto" [formGroup]="form" card-wrapper (submit)="addParcel($event)">
+    <h1 class="form-title">Add Parcel</h1>
+
+    <validated-input [control]="referenceNumber" [showErrorMessage]="showErrorMessage">
+      <input
+        form-control
+        type="text"
+        class="form-control"
+        formControlName="referenceNumber"
+        placeholder="Reference #"
+        (blur)="removeMessage()"
+      />
+    </validated-input>
+
+    <div class="form-group-col">
+      <div class="form-section">
+        <h1 class="form-title">Pick Up Address</h1>
+        <parcel-address-form formControlName="pickupAddress"></parcel-address-form>
+      </div>
+      <div class="form-section">
+        <h1 class="form-title tw-mb-3">Shipping Address</h1>
+        <parcel-address-form formControlName="shippingAddress"></parcel-address-form>
+      </div>
+    </div>
+
+    <div class="form-section tw-self-start">
+      <h1 class="form-title">Parcel Item Details</h1>
+
+      <validated-input [control]="itemCode" [showErrorMessage]="showErrorMessage">
+        <input form-control type="text" class="form-control" formControlName="itemCode" placeholder="Item Code" (blur)="removeMessage()" />
+      </validated-input>
+
+      <validated-input [control]="weight" [showErrorMessage]="showErrorMessage">
+        <input form-control type="text" class="form-control" formControlName="weight" placeholder="Weight(kg)" (blur)="removeMessage()" />
+      </validated-input>
+
+      <validated-input [control]="itemDescription" [showErrorMessage]="showErrorMessage">
+        <input
+          form-control
+          type="text"
+          class="form-control"
+          formControlName="itemDescription"
+          placeholder="Item Description"
+          (blur)="removeMessage()"
+        />
+      </validated-input>
+    </div>
+
+    <span class="tw-text-red-400" *ngIf="form.errors">*{{ form.errors["text"] }}</span>
+    <button type="submit" class="btn-submit" [disabled]="form.invalid">Add Hub</button>
+  </form>
+</card>

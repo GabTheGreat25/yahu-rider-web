@@ -1,0 +1,47 @@
+.container {
+  height: min-content;
+  width: min-content;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  box-shadow: 0 1rem 2rem 1rem #63738117;
+  border-radius: 12px;
+
+  .header {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    background-color: #0374e6;
+    height: 30rem;
+    width: 25rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0 0 12px 12px;
+
+    h1 {
+      color: #212b36;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    p {
+      color: #516579;
+      font-weight: 400;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .btn {
+      font-weight: 600;
+      width: 12rem;
+      padding: 0.6rem;
+    }
+  }
+}

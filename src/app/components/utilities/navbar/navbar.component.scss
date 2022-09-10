@@ -1,0 +1,141 @@
+.navbar {
+  position: fixed;
+  display: block;
+  z-index: 1;
+  min-height: 5rem;
+  min-width: 100%;
+  background-color: #fff;
+
+  .navbar-container {
+    display: grid;
+    grid-template-columns: 5rem auto;
+    padding: 0% 2%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 30px 2px rgb(0 0 0 / 10%);
+    min-width: 100vw;
+    background-color: #fff;
+
+    .navbar-image {
+      height: max-content;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+      min-width: 5rem;
+      align-items: center;
+
+      .navbar-logo {
+        height: 3rem !important;
+      }
+      .navbar-info {
+        @apply tw-font-extrabold tw-italic tw-text-xl tw-text-primary-neutral-dark;
+      }
+    }
+
+    .navbar-right {
+      display: grid;
+      grid-template-columns: auto;
+
+      &.is-login {
+        grid-template-columns: auto 3rem;
+      }
+
+      .nav-links {
+        @apply tw-text-primary-neutral-dark;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+        min-width: 5rem;
+        padding: 1rem;
+        padding-right: 0;
+        align-content: start;
+        justify-items: center;
+        width: 100%;
+
+        .tab {
+          display: grid;
+          padding: 0.5rem 1rem;
+          text-align: center;
+          height: 100%;
+          margin: auto auto;
+
+          &.active {
+            background: orangered;
+            color: white;
+            border-radius: 0.5rem;
+            height: calc(100% - 8px);
+
+            &:after {
+              content: none;
+            }
+          }
+
+          &:hover {
+            &:after {
+              width: 100%;
+            }
+          }
+
+          &:after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: orangered;
+            display: block;
+            margin: 6px auto auto auto;
+            transition: 0.5s;
+          }
+        }
+      }
+
+      .profile {
+        @apply tw-grid tw-grid-flow-col;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-content: center;
+
+        .navbar-wrapper {
+          .dropdown {
+            @apply tw-font-bold tw-text-neutral-500 tw-grid tw-grid-flow-col tw-gap-4;
+            cursor: pointer;
+          }
+
+          .dropdown-menu {
+            @apply tw-bg-white;
+            position: absolute;
+            right: 2rem;
+            width: 12rem;
+            border-radius: 0.35rem;
+            border: 1px solid #c5c5c5;
+            margin-top: 1rem;
+
+            .dropdown-item {
+              @apply tw-text-left tw-text-neutral-800 tw-grid tw-grid-flow-col tw-gap-2 tw-w-full;
+              @apply hover:tw-text-white hover:tw-bg-primary;
+              padding: 0.5rem 1.5rem;
+
+              &:hover {
+                font-weight: bold;
+              }
+
+              em {
+                width: 1.2rem;
+                @apply tw-pt-1;
+              }
+            }
+            .dropdown-divider {
+              margin: 0.1rem 0;
+              overflow: hidden;
+              border: 1px solid #e4e5ec;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.avatar {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+}
